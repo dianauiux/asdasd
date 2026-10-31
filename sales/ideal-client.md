@@ -1,5 +1,11 @@
 # Ideal client profile & lead scoring
 
+## Hard filters (Diana's rules, applied before scoring)
+- ✅ **Freelance / contract only.** No employment, part-time or full-time (contract-to-hire = caution).
+- ✅ **Foreign clients only.** Exclude Yerevan/Armenian on-site or hybrid roles.
+- ✅ **Fully remote from Armenia.** Exclude roles requiring residency in the US, EU, or UK.
+- ✅ **Time zone fit (Diana = GMT+4):** EU/UK/Middle East is ideal; US clients only if async with ≤ 2–3h overlap (US East 9:00 = 18:00 Yerevan).
+
 ## Ideal clients
 1. **Seed–Series B startups** with a product live or about to launch, and a founder or PM who owns design decisions
 2. **Small SaaS companies (5–50 people)** without an in-house designer
