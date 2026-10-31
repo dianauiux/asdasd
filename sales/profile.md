@@ -32,15 +32,16 @@ Figma, Photoshop, Illustrator, Slack, Jira, Miro, and AI tools (ChatGPT, Claude)
 - Email: dianahakobyan111@gmail.com · Phone: +374 94 833 833
 - Website / portfolio: https://deedesign.me
 - Behance: https://www.behance.net/DianaHakobyan1
+- Instagram: https://instagram.com/dee_uxuidesign
 - Dribbble / LinkedIn: [[TODO: paste URLs]]
+- Upwork profile: [[TODO]]
 
 **Which link to use where**
 - Upwork / Contra proposals → **Behance** (Upwork doesn't allow sharing contact details before a contract, and the website has them)
 - Email, LinkedIn, Toptal, direct applications → **deedesign.me** + Behance
-- Instagram: https://instagram.com/dee_uxuidesign
-- Upwork profile: [[TODO]]
 
 ## Logistics
 - Based in Yerevan, Armenia (GMT+4)
 - Languages: English, Russian, Armenian (native)
-- Open to: freelance/contract (remote), plus hybrid roles in Yerevan
+- Open to: **freelance/contract only**, international clients, 100% remote from Armenia (no employment, no Yerevan on-site/hybrid roles)
+- Rate: $40/h standard · $35–40 negotiable · $30/h floor (see offers-and-pricing.md)
