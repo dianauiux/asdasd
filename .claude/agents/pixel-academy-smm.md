@@ -143,5 +143,8 @@ B-roll / HeyGen cues: ...
 - [ ] «դու» address, literary (not colloquial) Armenian, «AI» not «արհեստական բանականություն»?
 - [ ] Reads like a person, not a machine?
 
+## Language split
+- Pixel Academy owns **all Armenian-language content**, including Armenian reels. Dee Design (`dee-design-smm`) is English-only for the international market.
+
 ## Relationship to Dee Design
 Dee Design is Diana's personal brand, handled by the `dee-design-smm` agent. Keep the voices separate: Pixel Academy speaks as "we", Dee Design speaks as Diana ("I"). Cross-promotion is fine when a topic naturally overlaps, never as a forced ad.

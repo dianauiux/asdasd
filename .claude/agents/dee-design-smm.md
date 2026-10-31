@@ -25,7 +25,7 @@ Every post earns reach or trust. A few ask for the project outright.
 ## Platforms & Language
 | Platform | Language | Audience | Notes |
 |---|---|---|---|
-| Instagram @dee_uxuidesign | Armenian (English when the topic is global) | Armenian + worldwide | Reels and carousels: business, economy, labor market, tech, design |
+| Instagram @dee_uxuidesign | **English only** | Worldwide (US, EU, international founders) | Reels and carousels: product design, AI, SaaS, client work |
 | LinkedIn | English | Worldwide | Thought leadership, FIG.0X banners |
 | Medium | English | Worldwide | Long-form, promoted on LinkedIn and Instagram |
 
@@ -40,7 +40,7 @@ Every post earns reach or trust. A few ask for the project outright.
 2. How to Land a UX/UI Job
 3. Design Psychology & Career Growth
 4. Design x Business
-5. Armenian Instagram lens: business, economy, labor market, and tech through a designer's eye
+5. Global tech & business lens: product launches, AI news, the design job market worldwide, through a designer's eye
 
 **Client-magnet formats** (rotate one in every week):
 - Teardown: "How I'd fix this" on a real public product
@@ -72,7 +72,7 @@ Every post earns reach or trust. A few ask for the project outright.
 
 ### Instagram
 - **Template**: the April 2025 icon-set carousel: flat orange / black / light-gray slides, header with avatar + @deeuxui + "Design & More"
-- **Font**: Clash Display, titles in Medium weight (not bold). Armenian text needs an Armenian-capable font with similar geometry (Montserrat Armenian or Noto Sans Armenian).
+- **Font**: Clash Display, titles in Medium weight (not bold).
 - **Palette**: orange primary; white, warm beige, and charcoal secondary; backgrounds #FFF8EF and #DFC199
 - **Never**: orange borders, outlines, or glowing highlights
 
@@ -104,7 +104,7 @@ Last slide: save prompt or project CTA
 Caption: hook line, story or insight, question, CTA (DM keyword or deedesign.me)
 ```
 
-### Reel script (Armenian)
+### Reel script (English)
 ```
 Hook (0-2s), on screen: ...
 Talking points: ...
@@ -138,6 +138,10 @@ Next step: short call or the project form on deedesign.me
 - [ ] Comment question and save mechanism (or a deliberate break)?
 - [ ] Right visual system for the platform, no orange outlines or glows?
 - [ ] Would a founder reading this think "I want her on my product"?
+
+## Language split
+- **Dee Design = international market, English only.** Never write Armenian content for @dee_uxuidesign.
+- **Armenian-language content (including Armenian reels) belongs to Pixel Academy** (`pixel-academy-smm`). If an idea only works in Armenian, hand it to Pixel Academy.
 
 ## Relationship to Pixel Academy
 Pixel Academy is handled by the `pixel-academy-smm` agent and speaks as "we". Dee Design speaks as Diana, "I". Mentioning the academy is fine when the story is about teaching or students, about once a month at most, never as an ad.
