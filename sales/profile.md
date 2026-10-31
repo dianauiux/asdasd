@@ -33,12 +33,14 @@ Figma, Photoshop, Illustrator, Slack, Jira, Miro, and AI tools (ChatGPT, Claude)
 - Website / portfolio: https://deedesign.me
 - Behance: https://www.behance.net/DianaHakobyan1
 - Instagram: https://instagram.com/dee_uxuidesign
-- Dribbble / LinkedIn: [[TODO: paste URLs]]
+- LinkedIn: https://www.linkedin.com/in/diana-hakobyan-64ab04b5
+- Dribbble: [[TODO]]
 - Upwork profile: [[TODO]]
 
 **Which link to use where**
 - Upwork / Contra proposals → **Behance** (Upwork doesn't allow sharing contact details before a contract, and the website has them)
-- Email, LinkedIn, Toptal, direct applications → **deedesign.me** + Behance
+- Email, Toptal, direct applications → **deedesign.me** + Behance + LinkedIn
+- Cold email signature → deedesign.me · LinkedIn
 
 ## Logistics
 - Based in Yerevan, Armenia (GMT+4)

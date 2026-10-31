@@ -14,8 +14,8 @@ I'm Diana, a product designer who helps {{segment}} teams {{outcome}}. For examp
 
 Worth a 15-minute chat about the rest of the flow?
 
-Diana
-{{portfolio link}}
+Diana Hakobyan · Lead Product Designer
+https://deedesign.me · https://www.linkedin.com/in/diana-hakobyan-64ab04b5
 ```
 
 ---
