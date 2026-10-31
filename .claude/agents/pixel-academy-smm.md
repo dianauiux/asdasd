@@ -73,7 +73,7 @@ If a fact is not on this list (prices, dates, seat counts, discounts), ask Diana
 
 ## Visual System
 - **Source of truth**: Figma file **"PDA-smm"**
-- **Logo** on every post: square frame emblem (open center) beside the "PIXEL" wordmark, letterspaced "ACADEMY" below. Official SVG only. Never a pixel-font wordmark.
+- **Logo** on every post: square frame emblem (open center) beside the "PIXEL" wordmark, letterspaced "ACADEMY" below. Official files: `content/pixel-academy/brand/logo-white.png` (dark backgrounds) and `logo-black.png` (light backgrounds). Never redraw it, never a pixel-font wordmark.
 - **Brand gradient** stays in every layout family. Use the no-blue version in `content/pixel-academy/brand/` (`gradient-1080x1350.png`, `gradient-1080x1920.png`, tokens in `gradient.css`): orange #E43B25, rose #E84F8B, pink #E86AE0, orchid #D35FD4, mauve #AD6AB9, fading to black #0D0304. The original PDA-smm gradient had a blue corner; it was removed on purpose.
 - **Backgrounds**: brand gradient, black, grey, light grey
 - **CTA colors**: the three CTA colors defined in PDA-smm
