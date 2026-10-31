@@ -1,48 +1,41 @@
 # Diana Hakobyan: Dee Design profile
 
-> The Sales Agent uses only the facts in this file. Fill in every `[[TODO]]` so proposals stay accurate.
+> Source: Diana's CV (Oct 2026). The Sales Agent uses only the facts in this file. Never invent metrics.
 
 ## Positioning
-**One-liner:** I design clear, conversion-focused digital products: from messy idea to a tested, dev-ready UI.
+**Title:** Lead Product Designer · FinTech, AI, SaaS & Web3
+**One-liner:** 12+ years designing FinTech, AI, SaaS and Web3 products for US and EU markets. I turn complex financial and data-heavy workflows into measurable gains in activation, retention, and revenue.
 
-**Elevator pitch (30 sec):**
-I'm Diana, a UX/UI and product designer. I help startups and growing businesses turn complex flows into products people actually understand and use. I handle the whole path, from research and UX strategy through UI design, design systems, and developer handoff, so founders get one partner instead of three freelancers.
+**Elevator pitch:**
+I'm Diana, a Lead Product Designer with 12+ years shipping FinTech, AI, SaaS and Web3 products for US and EU companies. I own product direction end to end with C-level, PM and engineering teams. My work has raised trade completion from about 52% to 71% and wallet-connection success from about 58% to 81%. I also build design systems that cut feature design time by around 45%.
 
-## Services
-- Product design (web & mobile apps, SaaS dashboards)
-- UX audits & conversion optimization
-- UX research: interviews, usability testing, synthesis
-- UI design & visual redesign
-- Design systems & component libraries in Figma
-- Landing pages & marketing sites
-- Prototyping & developer handoff specs
+## Skills
+Product Strategy · Design Leadership · Design Systems · A/B Testing · Design Psychology · User Research · IA & User Flows · Prototyping · Mobile (iOS/Android) · Web · FinTech · SaaS · Web3 · AI Products · Mentorship
 
 ## Tools
-Figma (variables, auto-layout, components, prototyping), FigJam, [[TODO: Framer / Webflow? Maze? Notion? Jira?]]
+Figma, Photoshop, Illustrator, Slack, Jira, Miro, and AI tools (ChatGPT, Claude)
 
-## Industries / domains
-[[TODO: e.g. fintech, e-commerce, edtech, health, B2B SaaS]]
+## Experience & proof points
+| Company | Role | Domain | Results |
+|---|---|---|---|
+| **Seascape.Network** 🇺🇸 | Senior UX Designer | Web3 / Gaming (NFT) | Wallet-connection success ~58% → ~81%; first-game completion +~33%; top-task navigation depth 4 → 2 clicks; visual direction reused across 3 product lines |
+| **Morpher** 🇩🇪 | Senior Product Designer | Blockchain / Trading | First-session trade completion ~52% → ~71%; time to first trade ~14 → ~6 min; design system of 60+ components; feature design time −~45%; mobile reached ~40% of new signups in 2 quarters |
+| **Asset Dash** 🇺🇸 | Art Director | FinTech / AI portfolio | Rewards Center: weekly active users +~28%, redemption +~35% in 90 days; time-to-insight −~40%; "where do I find X" support tickets −~22%; handoff time −~30%; shipping cycles 4 → 2.5 weeks |
+| **ALOA Agency** 🇺🇸 | Senior Product Designer | Sustainability SaaS | MVP shipped in ~12 weeks vs. an 18-week estimate; weekly habit retention ~22% → ~38%; mentored 2 mid-level designers |
+| **Storm Ideas** 🇺🇸 | Senior Product Designer | Digital products agency | 5+ B2B/B2C products, 2 of which scaled or were acquired; rework −~30% and missed-spec defects reduced |
 
-## Proof points (case studies)
-| # | Project | Problem | What I did | Result (metric) | Link |
-|---|---|---|---|---|---|
-| 1 | [[TODO]] | [[TODO]] | [[TODO]] | [[TODO: e.g. +32% sign-up completion]] | [[TODO]] |
-| 2 | [[TODO]] | | | | |
-| 3 | [[TODO]] | | | | |
+## Leadership & education
+- **Founder & Lead Mentor, Pixel Design Academy:** trained 100+ designers; ~70% placed in mid-to-senior product design roles within 6 months
+- **Master's in Design**, National University of Architecture and Construction of Armenia (2017–2021)
 
-## Testimonials
-- [[TODO: "Quote" — Name, Role, Company]]
-
-## Links
+## Links & contact
+- Email: dianahakobyan111@gmail.com · Phone: +374 94 833 833
+- Behance / Dribbble / LinkedIn: [[TODO: paste URLs]]
 - Portfolio: [[TODO]]
 - Instagram: https://instagram.com/dee_uxuidesign
-- LinkedIn: [[TODO]]
-- Medium: [[TODO]]
-- Upwork / Contra / Dribbble / Behance: [[TODO]]
-- Booking link (Calendly / Cal.com): [[TODO]]
-- Email: dianahakobyan111@gmail.com
+- Upwork profile: [[TODO]]
 
-## Availability & logistics
-- Time zone: [[TODO: e.g. GMT+4 (Yerevan)]], with 3–4 hours of overlap with EU/US-East
-- Capacity: [[TODO: e.g. 1 large + 1 small project at a time]]
-- Languages: English, Armenian, [[TODO: Russian?]]
+## Logistics
+- Based in Yerevan, Armenia (GMT+4)
+- Languages: English, Russian, Armenian (native)
+- Open to: freelance/contract (remote), plus hybrid roles in Yerevan
