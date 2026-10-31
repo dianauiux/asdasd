@@ -77,7 +77,7 @@ Pixel Academy-ում դասընթացներ են AI-ի, դիզայնի, տեխն
 💰 Դասընթացներ՝ 40 000 ֏-ից
 
 👉 Գրանցման հղումը՝ պրոֆիլում
-💬 Հարցեր ունե՞ս՝ գրիր մեզ Direct-ում
+💬 Հարցեր ունե՞ս՝ գրիր մեզ անձնական նամակով
 
 #pixelacademy #դասընթացներ #առցանցդասընթաց #AI #claudeai #uxuidesign #գրաֆիկդիզայն #productmanagement #smm #vibecoding #Երևան #yerevan #armenia
 

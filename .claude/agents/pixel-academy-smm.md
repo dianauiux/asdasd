@@ -69,7 +69,7 @@ If a fact is not on this list (prices, dates, seat counts, discounts), ask Diana
 ### Copy
 - **Literate «դու», not colloquial.** Address the reader as «դու» (Սովորիր, Գրիր մեզ, Ընտրիր, քո նախագիծը), never «Դուք». But keep the language literary: correct grammar and punctuation, full sentences, no slang, no clipped colloquial phrases («Իսկ հետո ի՞նչ» ✗ → «Ի՞նչ է լինելու հետո» ✓).
 - Write **«AI»**, never «արհեստական բանականություն». Prefer «առցանց» over «օնլայն», «հիբրիդային» for the 4-month courses.
-- Link CTA wording: «Անցիր հղումով ↓»
+- Link CTA wording: «Անցիր հղումով ↓». For DMs write «անձնական նամակ» («Գրիր մեզ անձնական նամակով»), never «Direct».
 - Minimal, precise, polished Armenian
 - No AI-sounding filler, no motivational clichés, no hype words
 - Facts about the academy come only from Brand Facts
