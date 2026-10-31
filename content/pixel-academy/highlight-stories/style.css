@@ -31,3 +31,17 @@ h1.q{font-size:88px}
 .ctabox{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:30px}
 .pill{background:linear-gradient(90deg,#E43B25,#E84F8B 55%,#E86AE0);border-radius:999px;padding:34px 64px;font-size:42px;font-weight:700}
 .hint{font-size:34px;font-weight:600;color:#FFD23F}
+/* gradient frames */
+.s.gr{background:#0D0304 url(../brand/gradient-1080x1920.png) center/cover}
+.s.gr:after{display:none}
+.s.gr:before{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px)}
+.s.gr h1 em,.s.gr .stat b,.s.gr .ans .qlabel.y{background:none;-webkit-background-clip:initial;color:#FFD23F}
+.s.gr .hl{background:rgba(0,0,0,.35)}.s.gr .hl em{color:rgba(255,255,255,.7)}
+.s.gr .card,.s.gr .stat,.s.gr .ans,.s.gr .quote,.s.gr .tags span{background:rgba(13,3,4,.72)}
+.s.gr .ans{border-left-color:#FFD23F}.s.gr .qlabel{color:rgba(255,255,255,.75)}
+.s.gr .lead,.s.gr .stat span{color:#fff}
+.s.gr .chips span{border-color:rgba(255,255,255,.55);background:rgba(13,3,4,.35)}
+.s.gr .card.st i{background:#0D0304}
+.s.gr .qm{background:none;-webkit-background-clip:initial;color:#FFD23F}
+.s.gr .pill{background:#0D0304;color:#fff}
+.s.gr .ph{background:rgba(13,3,4,.45)}
