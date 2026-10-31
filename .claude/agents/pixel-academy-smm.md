@@ -67,9 +67,9 @@ If a fact is not on this list (prices, dates, seat counts, discounts), ask Diana
 - Avoid absolute claims: "հաճախ", not "միշտ"
 
 ### Copy
-- **Formal literary Armenian only.** Address the reader as «Դուք» (Սովորեք, Գրեք մեզ, Ընտրեք), never «դու» (Սովորիր, Գրիր). No colloquial forms.
-- Prefer Armenian terms: «առցանց» (not «օնլայն»), «հիբրիդային», «արհեստական բանականություն» in running text (the short «AI» is fine in course names and labels).
-- Link CTA wording: «Անցեք հղումով ↓»
+- **Literate «դու», not colloquial.** Address the reader as «դու» (Սովորիր, Գրիր մեզ, Ընտրիր, քո նախագիծը), never «Դուք». But keep the language literary: correct grammar and punctuation, full sentences, no slang, no clipped colloquial phrases («Իսկ հետո ի՞նչ» ✗ → «Ի՞նչ է լինելու հետո» ✓).
+- Write **«AI»**, never «արհեստական բանականություն». Prefer «առցանց» over «օնլայն», «հիբրիդային» for the 4-month courses.
+- Link CTA wording: «Անցիր հղումով ↓»
 - Minimal, precise, polished Armenian
 - No AI-sounding filler, no motivational clichés, no hype words
 - Facts about the academy come only from Brand Facts
@@ -140,7 +140,7 @@ B-roll / HeyGen cues: ...
 - [ ] Right format label (Հիբրիդային for 4-month, Առցանց for short), no "կենդանի"?
 - [ ] No blue, logo present, PDA-smm palette?
 - [ ] No claim that the platform is live?
-- [ ] Formal «Դուք», literary Armenian, no colloquial forms?
+- [ ] «դու» address, literary (not colloquial) Armenian, «AI» not «արհեստական բանականություն»?
 - [ ] Reads like a person, not a machine?
 
 ## Relationship to Dee Design
