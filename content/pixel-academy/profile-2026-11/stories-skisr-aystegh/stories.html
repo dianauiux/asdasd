@@ -1,0 +1,80 @@
+<!doctype html><html lang="hy"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g1:#C2185B;--g2:#FF6A00;--y:#FFD23F;--bg:#0E0E0E;--card:#1B1B1B;--muted:#9A9A9A;
+--grad:linear-gradient(135deg,var(--g1),var(--g2)); /* PLACEHOLDER: PDA-smm gradient */}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#444;display:flex;gap:30px;flex-wrap:wrap;padding:30px;font-family:"Noto Sans Armenian",sans-serif;color:#fff}
+.s{width:1080px;height:1920px;background:var(--bg);position:relative;overflow:hidden;padding:260px 96px 320px;display:flex;flex-direction:column}
+.s:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:40px 40px}
+.s>*{position:relative}
+.logo{position:absolute;top:150px;left:96px;display:flex;align-items:center;gap:16px}
+.logo svg{width:50px;height:50px}.logo b{font:700 30px Montserrat;letter-spacing:.06em;display:block;line-height:1}.logo i{font:500 12.5px Montserrat;font-style:normal;letter-spacing:.58em;display:block;margin-top:5px}
+.step{position:absolute;top:158px;right:96px;font:600 26px Montserrat;color:var(--muted);letter-spacing:.1em}
+h1{font-weight:800;font-size:104px;line-height:1.02;letter-spacing:-.01em}
+h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;color:transparent}
+.lead{font-size:40px;color:#cfcfcf;margin-top:28px;line-height:1.35;font-weight:500}
+.stats{display:grid;gap:22px;margin-top:auto}
+.stat{background:var(--card);border-radius:28px;padding:34px 40px;display:flex;align-items:baseline;gap:26px}
+.stat b{font:700 72px Montserrat;background:var(--grad);-webkit-background-clip:text;color:transparent;min-width:250px}
+.stat span{font-size:36px;font-weight:600}
+.px{position:absolute}
+.grp{margin-top:56px}
+.grp h3{font:600 26px Montserrat;letter-spacing:.14em;color:var(--y);margin-bottom:20px;text-transform:uppercase}
+.big{background:var(--card);border-radius:28px;padding:30px 36px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}
+.big b{font-size:44px;font-weight:700}.big small{font:600 26px Montserrat;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:16px}
+.chip{border:2px solid #333;border-radius:999px;padding:18px 28px;font-size:32px;font-weight:600}
+.phone{margin:64px auto 0;width:470px;height:860px;border-radius:64px;background:#000;border:10px solid #2a2a2a;overflow:hidden;box-shadow:0 30px 80px rgba(194,24,91,.35)}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ph{width:100%;height:100%;background:repeating-linear-gradient(45deg,#222 0 20px,#262626 20px 40px)}
+.hint{margin-top:44px;text-align:center;font-size:34px;font-weight:600;color:var(--y)}
+.steps{margin-top:70px;display:grid;gap:26px}
+.st{display:flex;gap:30px;align-items:center;background:var(--card);border-radius:28px;padding:36px 40px}
+.st .n{width:96px;height:96px;flex:none;background:var(--grad);display:flex;align-items:center;justify-content:center;font:700 48px Montserrat;clip-path:polygon(0 12%,12% 12%,12% 0,88% 0,88% 12%,100% 12%,100% 88%,88% 88%,88% 100%,12% 100%,12% 88%,0 88%)}
+.st b{font-size:42px;font-weight:700;display:block}.st span{font-size:30px;color:var(--muted);font-weight:500}
+.cta{margin-top:auto;align-self:center;background:var(--grad);border-radius:999px;padding:34px 64px;font-size:42px;font-weight:700}
+</style></head><body>
+<template id="L"><div class="logo"><svg viewBox="0 0 52 52" fill="none"><rect x="5" y="5" width="42" height="42" stroke="#fff" stroke-width="9"/></svg><div><b>PIXEL</b><i>ACADEMY</i></div></div></template>
+<template id="SP"><svg class="px" style="right:110px;top:300px" width="120" height="120" viewBox="0 0 6 6" shape-rendering="crispEdges"><rect x="2" y="0" width="1" height="1" fill="#FFD23F"/><rect x="2" y="2" width="1" height="1" fill="#FFD23F"/><rect x="0" y="2" width="1" height="1" fill="#FFD23F"/><rect x="4" y="2" width="1" height="1" fill="#FFD23F"/><rect x="2" y="4" width="1" height="1" fill="#FFD23F"/></svg></template>
+
+<section class="s" id="f1"><slot class="l"></slot><span class="step">1 / 4</span>
+ <svg class="px" style="right:96px;top:290px" width="260" height="320" viewBox="0 0 13 16" shape-rendering="crispEdges" id="cur"></svg>
+ <h1 style="margin-top:80px">Բարև,<br>մենք<br><em>Pixel<br>Academy</em>-ն ենք</h1>
+ <p class="lead">Դիզայնի և AI-ի գործնական դասընթացներ՝ օնլայն</p>
+ <div class="stats">
+  <div class="stat"><b>10+</b><span>տարվա փորձ</span></div>
+  <div class="stat"><b>1000+</b><span>ուսանող</span></div>
+  <div class="stat"><b>≤10</b><span>մասնակից խմբում</span></div>
+ </div>
+</section>
+
+<section class="s" id="f2"><slot class="l"></slot><span class="step">2 / 4</span>
+ <h1 style="margin-top:80px">Ի՞նչ ենք<br><em>սովորեցնում</em></h1>
+ <div class="grp"><h3>Խորացված · 4 ամիս</h3>
+  <div class="big"><b>UX/UI դիզայն + AI</b><small>սկսնակների համար</small></div>
+  <div class="big"><b>Գրաֆիկ դիզայն + AI</b><small>սկսնակների համար</small></div></div>
+ <div class="grp"><h3>Կարճ · 1–2 ամիս</h3>
+  <div class="chips"><span class="chip">AI գործիքներ</span><span class="chip">Claude Code</span><span class="chip">AI՝ UX/UI դիզայներների համար</span><span class="chip">AI՝ գրաֆիկ դիզայներների համար</span><span class="chip">Վայբ քոդինգ</span><span class="chip">Պրոդուկտ մենեջմենթ</span><span class="chip">Մարքեթինգ և SMM</span></div></div>
+</section>
+
+<section class="s" id="f3"><slot class="l"></slot><span class="step">3 / 4</span>
+ <h1 style="margin-top:80px;font-size:92px">Բոլոր ծրագրերը՝<br><em>մեր կայքում</em></h1>
+ <div class="phone">{{SHOT}}</div>
+ <p class="hint">Սեղմիր հղմանը ↓</p>
+</section>
+
+<section class="s" id="f4"><slot class="l"></slot><span class="step">4 / 4</span>
+ <h1 style="margin-top:80px">Ինչպե՞ս<br><em>սկսել</em></h1>
+ <div class="steps">
+  <div class="st"><div class="n">1</div><div><b>Ընտրիր դասընթացը</b><span>կայքում կամ «Դասընթացներ» highlight-ում</span></div></div>
+  <div class="st"><div class="n">2</div><div><b>Ստացիր խորհրդատվություն</b><span>անվճար, կօգնենք ընտրել</span></div></div>
+  <div class="st"><div class="n">3</div><div><b>Միացիր խմբին</b><span>մինչև 10 մասնակից</span></div></div>
+ </div>
+ <div class="cta">Գրիր մեզ Direct-ում</div>
+</section>
+<script>
+const t=document.getElementById('L');document.querySelectorAll('slot.l').forEach(s=>s.replaceWith(t.content.cloneNode(true)));
+const rows=["#...........","##..........","#+#.........","#++#........","#+++#.......","#++++#......","#+++++#.....","#++++++#....","#+++++++#...","#++++#####..","#+#+#.......","##..#+#.....","#...#+#.....",".....#+#....",".....###...."];
+let h='';rows.forEach((r,y)=>[...r].forEach((c,x)=>{if(c!='.')h+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${c=='#'?'#fff':'#FFD23F'}"/>`}));document.getElementById('cur').innerHTML=h;
+</script></body></html>
