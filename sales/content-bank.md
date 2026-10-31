@@ -84,7 +84,7 @@ Use only cleared projects. Lead with the result, then one decision that drove it
 
 ---
 
-## E. Mentor stories (trust, shares) — max 1 a month
+## E. Mentor stories (trust, shares): max 1 a month
 
 From Pixel Design Academy (no student names without permission):
 - `A student asked me how to get a fintech job without fintech experience. Here's the portfolio project I told her to build.`
