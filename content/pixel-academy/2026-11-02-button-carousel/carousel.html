@@ -10,9 +10,9 @@
   --grad-a:#2A0B3D;      /* PLACEHOLDER: brand gradient start */
   --grad-b:#C2185B;      /* PLACEHOLDER: brand gradient mid   */
   --grad-c:#FF6A00;      /* PLACEHOLDER: brand gradient end   */
-  --brand-gradient:linear-gradient(150deg,var(--grad-a) 0%,var(--grad-b) 55%,var(--grad-c) 100%);
-  --cta-1:#FF6A00;       /* PLACEHOLDER: PDA-smm CTA color 1 */
-  --cta-2:#E0007A;       /* PLACEHOLDER: PDA-smm CTA color 2 */
+  --brand-gradient:url(../brand/gradient-1080x1350.png) center/cover;
+  --cta-1:#E43B25;       /* brand orange (PDA-smm CTA colors still to confirm) */
+  --cta-2:#E84F8B;       /* brand rose */
   --cta-3:#FFD23F;       /* PLACEHOLDER: PDA-smm CTA color 3 */
   --black:#0E0E0E; --grey:#2B2B2B; --light:#EDEDED; --white:#FFFFFF;
   --ink:#121212; --muted:#6B6B6B; --line:#D2D2D2;
@@ -24,7 +24,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-family:var(--font-body)}
 .slide{width:1080px;height:1350px;position:relative;overflow:hidden;padding:var(--pad);display:flex;flex-direction:column;color:var(--ink)}
-.s-grad{background:var(--brand-gradient);color:var(--white)}
+.s-grad{background:var(--brand-gradient);background-color:#0D0304;color:var(--white)}
 .s-light{background:var(--light)}
 .s-black{background:var(--black);color:var(--white)}
 /* header */

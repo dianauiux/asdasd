@@ -1,0 +1,12 @@
+/* Pixel Academy brand gradient: no-blue version of the PDA-smm gradient.
+   Full-bleed backgrounds: use the PNGs (gradient-1080x1350.png etc.), not CSS. */
+:root{
+  --pa-orange:#E43B25;   /* left glow */
+  --pa-rose:#E84F8B;     /* center */
+  --pa-pink:#E86AE0;     /* hot pink highlight */
+  --pa-orchid:#D35FD4;   /* top-right (replaces blue #3780F1) */
+  --pa-mauve:#AD6AB9;    /* top */
+  --pa-black:#0D0304;    /* bottom */
+  /* for text, icons, buttons */
+  --pa-gradient-linear:linear-gradient(135deg,var(--pa-orange) 0%,var(--pa-rose) 55%,var(--pa-pink) 100%);
+}
