@@ -11,7 +11,7 @@
 | US West | Very little overlap | Async-only projects |
 
 ## 1. Upwork: saved searches (check twice a day, apply within 1–2h of posting)
-Filters: **Expert level · Payment verified · Client spent $1k+ · Fixed price ≥ $1,000 or Hourly ≥ $40 · Proposals < 15**
+Filters: **Expert level · Payment verified · Client spent $1k+ · Fixed price ≥ $600 or Hourly ≥ $30 · Proposals < 15**
 
 Search terms (create a separate saved search for each):
 1. `product designer fintech`
@@ -65,7 +65,7 @@ English · Russian · Armenian
 Message me with your product link and I'll reply with 2–3 quick UX observations.
 ```
 
-**Rate:** [[TODO: e.g. $45–60/h]]. With 12 years of experience, don't start below $40/h.
+**Rate:** **$40/h** on the profile. Negotiate down to $35/h; $30/h only for long-term (3+ months) or large projects. Raise to $45–50/h after 3–5 five-star reviews.
 
 **Project Catalog (fixed-price offers):**
 1. FinTech/SaaS UX Audit: 5 days
