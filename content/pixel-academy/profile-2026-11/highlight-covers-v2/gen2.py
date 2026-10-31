@@ -40,12 +40,12 @@ ORDER=[("01-skisr-aystegh","skisr","Սկսիր այստեղ","Սկսիր այս�
 sparks=[(-3,-2),(-2,-3),(17,1),(18,0),(16,15),(-2,14)]
 def svg(rows,v):
     h=len(rows);w=max(len(r) for r in rows);G=18;ox=(G-w)/2;oy=(G-h)/2;o=[]
-    main="#fff" if v=="a" else "url(#g)"
+    main="#fff" if v=="a" else "url(#pg)"
     for y,r in enumerate(rows):
         for x,ch in enumerate(r):
             if ch in '#+': o.append(f'<rect x="{x+ox}" y="{y+oy}" width="1.02" height="1.02" fill="{main if ch=="#" else "#FFD23F"}"/>')
     for sx,sy in sparks: o.append(f'<rect x="{sx+1}" y="{sy+1.5}" width=".9" height=".9" fill="#FFD23F" opacity=".9"/>')
-    return f'<svg viewBox="-3 -2 24 22" shape-rendering="crispEdges"><defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="18" y2="18"><stop offset="0" stop-color="#E43B25"/><stop offset=".55" stop-color="#E84F8B"/><stop offset="1" stop-color="#E86AE0"/></linearGradient></defs>{"".join(o)}</svg>'
+    return f'<svg viewBox="-3 -2 24 22" shape-rendering="crispEdges"><defs><pattern id="pg" patternUnits="userSpaceOnUse" x="0" y="0" width="18" height="18"><image href="../../brand/gradient-icon.png" width="18" height="18" preserveAspectRatio="none"/></pattern><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="18" y2="18"><stop offset="0" stop-color="#E43B25"/><stop offset=".55" stop-color="#E84F8B"/><stop offset="1" stop-color="#E86AE0"/></linearGradient></defs>{"".join(o)}</svg>'
 css='''<style>*{margin:0;padding:0}body{display:flex;flex-wrap:wrap;gap:20px;padding:20px;background:#444}
 .c{width:1080px;height:1920px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .a{background:#0D0304 url(../../brand/gradient-1080x1920.png) center/cover}.b{background:#0E0E0E}

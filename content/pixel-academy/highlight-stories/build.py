@@ -7,12 +7,15 @@ I['dasntacner']=["..############..","..#..........#..","..#....+.....#..","..#..
 I['usanoxner']=["......####......","....########....","..############..","################","..############.+","....########...+","....#......#...+","....#......#..++","....##....##..++",".....######....."]
 I['kartsiqner']=[".############.","#............#","#...++..++...#","#..++++++++..#","#..++++++++..#","#...++++++...#","#....++++....#","#.....++.....#","#............#",".#############","..##..........","..#..........."]
 I['harcer']=["...######...","..########..",".###....###.",".###....###.","........###.","......####..",".....####...",".....###....",".....###....","............",".....+++....",".....+++...."]
+PID=0
 def icon(rows,cls='ic',white=False):
     h=len(rows);w=max(len(r) for r in rows);o=[]
     for y,r in enumerate(rows):
         for x,c in enumerate(r):
             if c in '#+':o.append(f'<rect x="{x}" y="{y}" width="1.02" height="1.02" fill="{("#fff" if white else "url(#g)") if c=="#" else "#FFD23F"}"/>')
-    return f'<svg class="{cls}" viewBox="0 0 {w} {h}" shape-rendering="crispEdges" style="aspect-ratio:{w}/{h}">{"".join(o)}</svg>'
+    global PID; PID+=1; pid=f"pg{PID}"; m=max(w,h)
+    pat=f'<defs><pattern id="{pid}" patternUnits="userSpaceOnUse" x="0" y="0" width="{m}" height="{m}"><image href="../brand/gradient-icon.png" width="{m}" height="{m}" preserveAspectRatio="none"/></pattern></defs>'
+    return f'<svg class="{cls}" viewBox="0 0 {w} {h}" shape-rendering="crispEdges" style="aspect-ratio:{w}/{h}">{pat}{"".join(o).replace("url(#g)",f"url(#{pid})")}</svg>'
 E=H.escape
 def t(s):  # *x* -> gradient em, [x] -> yellow placeholder
     s=E(s);s=re.sub(r'\*(.+?)\*',r'<em>\1</em>',s,flags=re.S);s=re.sub(r'\[(.+?)\]',r'<span class="fill">[\1]</span>',s);return s.replace('\n','<br>')
