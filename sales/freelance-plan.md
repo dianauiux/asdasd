@@ -65,6 +65,8 @@ English · Russian · Armenian
 Message me with your product link and I'll reply with 2–3 quick UX observations.
 ```
 
+**Portfolio section:** add 3–5 projects from Behance (https://www.behance.net/DianaHakobyan1): Morpher (trading), Seascape (Web3), Asset Dash (FinTech/AI) first. Don't put the website link in the Upwork overview; Upwork doesn't allow off-platform contact details.
+
 **Rate:** **$40/h** on the profile. Negotiate down to $35/h; $30/h only for long-term (3+ months) or large projects. Raise to $45–50/h after 3–5 five-star reviews.
 
 **Project Catalog (fixed-price offers):**

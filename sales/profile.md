@@ -30,8 +30,13 @@ Figma, Photoshop, Illustrator, Slack, Jira, Miro, and AI tools (ChatGPT, Claude)
 
 ## Links & contact
 - Email: dianahakobyan111@gmail.com · Phone: +374 94 833 833
-- Behance / Dribbble / LinkedIn: [[TODO: paste URLs]]
-- Portfolio: [[TODO]]
+- Website / portfolio: https://deedesign.me
+- Behance: https://www.behance.net/DianaHakobyan1
+- Dribbble / LinkedIn: [[TODO: paste URLs]]
+
+**Which link to use where**
+- Upwork / Contra proposals → **Behance** (Upwork doesn't allow sharing contact details before a contract, and the website has them)
+- Email, LinkedIn, Toptal, direct applications → **deedesign.me** + Behance
 - Instagram: https://instagram.com/dee_uxuidesign
 - Upwork profile: [[TODO]]
 
