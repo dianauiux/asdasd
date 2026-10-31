@@ -126,42 +126,6 @@
   ]
  },
  {
-  "slug": "03-usanoxner",
-  "title": "Ուսանողներ",
-  "icon": "usanoxner",
-  "frames": [
-   {
-    "k": "cover",
-    "h": "Մեր\n*ուսանողները*",
-    "p": "1000+ ուսանող՝ 10+ տարում։ Ահա, թե ինչ են նրանք ստեղծում դասընթացների ընթացքում"
-   },
-   {
-    "k": "chips",
-    "h": "Ուսանողական\n*նախագծեր*",
-    "items": [
-     "LocalBuzz",
-     "Foster's Gin",
-     "QPRI",
-     "CHAMUCO",
-     "Dolce Bean",
-     "1980 Pub",
-     "Yogi",
-     "BRDUCH",
-     "Baby Cereal",
-     "Logic App",
-     "Modern Tech Planet",
-     "Snaggle"
-    ]
-   },
-   {
-    "k": "cta",
-    "h": "Բոլոր աշխատանքները՝\n*Behance-ում*",
-    "btn": "Դիտել աշխատանքները",
-    "hint": "Սեղմիր հղմանը ↓"
-   }
-  ]
- },
- {
   "slug": "05-harcer",
   "title": "Հարցեր",
   "icon": "harcer",
