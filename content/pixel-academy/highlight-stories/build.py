@@ -62,7 +62,7 @@ for hi,h in enumerate(D):
         f.setdefault('ic',I[h['icon']])
         fid=f"{h['slug']}-{fi+1}";ids.append([h['slug'],fid])
         W=fi%2==1
-        out.append(f'<section class="s{" gr" if W else ""}" id="{fid}"><div class="logo"><svg viewBox="0 0 52 52" fill="none"><rect x="5" y="5" width="42" height="42" stroke="#fff" stroke-width="9"/></svg><div><b>PIXEL</b><i>ACADEMY</i></div></div><div class="hl">{icon(I[h["icon"]],"tinyic",W)}<span>{E(h["title"])}</span><em>{fi+1}/{n}</em></div><div class="body">{frame(f,W)}</div></section>')
+        out.append(f'<section class="s{" gr" if W else ""}" id="{fid}"><div class="logo"><img src="../brand/logo-white.png" alt="Pixel Academy"></div><div class="hl">{icon(I[h["icon"]],"tinyic",W)}<span>{E(h["title"])}</span><em>{fi+1}/{n}</em></div><div class="body">{frame(f,W)}</div></section>')
 out.append('</body></html>')
 open('stories.html','w').write(''.join(out));json.dump(ids,open('ids.json','w'))
 print(len(ids),'frames')

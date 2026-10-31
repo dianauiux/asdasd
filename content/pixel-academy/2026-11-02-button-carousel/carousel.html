@@ -34,6 +34,7 @@ body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-fami
 .logo .wm{display:flex;flex-direction:column;line-height:1}
 .logo .wm b{font-family:Montserrat,sans-serif;font-weight:700;font-size:30px;letter-spacing:.06em}
 .logo .wm i{font-style:normal;font-family:Montserrat,sans-serif;font-weight:500;font-size:12.5px;letter-spacing:.58em;margin-top:5px}
+.logo img{height:58px;width:auto;display:block}.logo .lb{display:none}.s-light .logo .lw{display:none}.s-light .logo .lb{display:block}
 .pg{font-family:Montserrat,sans-serif;font-weight:600;font-size:24px;opacity:.6;letter-spacing:.08em}
 /* type */
 .title{font-family:var(--font-title);font-variation-settings:"wdth" 62.5;position:relative;z-index:3;font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:.005em}
@@ -74,12 +75,7 @@ body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-fami
 <body>
 
 <!-- Logo approximation: replace with official PIXEL ACADEMY SVG -->
-<template id="logo">
-  <div class="logo">
-    <svg viewBox="0 0 52 52" fill="none"><rect x="5" y="5" width="42" height="42" stroke="currentColor" stroke-width="9"/></svg>
-    <div class="wm"><b>PIXEL</b><i>ACADEMY</i></div>
-  </div>
-</template>
+<template id="logo"><div class="logo"><img class="lw" src="../brand/logo-white.png" alt="Pixel Academy"><img class="lb" src="../brand/logo-black.png" alt="Pixel Academy"></div></template>
 
 <!-- 01 COVER -->
 <section class="slide s-grad" id="s1">
@@ -108,7 +104,7 @@ body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-fami
       <p class="note">Ֆոն, չափ, հստակ եզրեր</p>
     </div>
   </div>
-  <div class="foot"><span>pixelacademy.am</span><span>→</span></div>
+  <div class="foot"><span>@pixel___academy</span><span>→</span></div>
 </section>
 
 <!-- 03 -->
@@ -127,7 +123,7 @@ body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-fami
       <p class="note">Գլխավորը՝ լցված, երկրորդականը՝ մեղմ</p>
     </div>
   </div>
-  <div class="foot"><span>pixelacademy.am</span><span>→</span></div>
+  <div class="foot"><span>@pixel___academy</span><span>→</span></div>
 </section>
 
 <!-- 04 -->
@@ -146,7 +142,7 @@ body{background:#777;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-fami
       <p class="note">Օգտատերը գիտի՝ ինչ է ստանալու</p>
     </div>
   </div>
-  <div class="foot"><span>pixelacademy.am</span><span>→</span></div>
+  <div class="foot"><span>@pixel___academy</span><span>→</span></div>
 </section>
 
 <!-- 05 CTA -->
