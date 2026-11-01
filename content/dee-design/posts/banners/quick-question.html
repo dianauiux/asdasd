@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#131210;--cream:#ECE5D8;--org:#E84E1B;--mut:#8C857A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;padding:30px}
+.b{width:1200px;height:1200px;background:var(--ink);position:relative;overflow:hidden;color:var(--cream);font-family:Syne,sans-serif}
+.grid{position:absolute;inset:0 60px;display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none}
+.grid i{border-left:1px solid rgba(236,229,216,.06)}.grid i:last-child{border-right:1px solid rgba(236,229,216,.06)}
+.grain{position:absolute;inset:0;opacity:.11;mix-blend-mode:screen}
+.crop{position:absolute;width:26px;height:26px;border-color:rgba(236,229,216,.5);border-style:solid}
+.tl{top:28px;left:28px;border-width:2px 0 0 2px}.tr{top:28px;right:28px;border-width:2px 2px 0 0}.bl{bottom:28px;left:28px;border-width:0 0 2px 2px}.br{bottom:28px;right:28px;border-width:0 2px 2px 0}
+.hdr{position:absolute;top:60px;left:60px;right:60px;display:flex;justify-content:space-between;font:500 20px Syne;letter-spacing:.06em;padding-bottom:18px;border-bottom:1px solid rgba(236,229,216,.18)}
+.hdr b{font-weight:600}.hdr span{color:var(--mut)}
+.fig{color:var(--org)!important}
+.chat{position:absolute;top:140px;left:50%;transform:translateX(-50%) rotate(-2deg) scale(.9);transform-origin:top center;width:640px;background:var(--cream);border-radius:36px;padding:30px 30px 36px;color:var(--ink);font-family:Inter,sans-serif;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.top{display:flex;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid rgba(19,18,16,.12);margin-bottom:22px}
+.av{width:52px;height:52px;border-radius:50%;background:#C9BFAE;display:flex;align-items:center;justify-content:center;font:600 22px Syne}
+.top b{display:block;font:600 22px Inter}.top small{font-size:16px;color:#2f8f4e;font-weight:500}
+.m{width:fit-content;max-width:78%;padding:15px 20px;border-radius:22px;font-size:22px;line-height:1.3;margin-bottom:12px;position:relative}
+.in{background:#fff;border-bottom-left-radius:6px}
+.out{background:var(--org);color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+.t{display:block;font-size:14px;opacity:.55;margin-top:6px}
+.typing{display:inline-flex;gap:7px;background:#fff;padding:18px 22px;border-radius:22px;border-bottom-left-radius:6px}
+.typing i{width:10px;height:10px;border-radius:50%;background:#b4ab9c}
+.foot{position:absolute;left:60px;right:60px;bottom:70px}
+h1{font:600 92px/0.98 Syne;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--org)}
+.sub{font:500 26px Syne;color:var(--mut);margin-top:22px}
+</style></head><body>
+<div class="b" id="banner">
+ <svg class="grain" width="1200" height="1200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+ <div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <div class="crop tl"></div><div class="crop tr"></div><div class="crop bl"></div><div class="crop br"></div>
+ <div class="hdr"><b>@deeuxui</b><span><span class="fig" style="font-family:Inter;font-weight:600">FIG.0X</span> &nbsp;·&nbsp; CLIENT COMMUNICATION</span></div>
+ <div class="chat">
+  <div class="top"><div class="av">C</div><div><b>Client</b><small>online</small></div></div>
+  <div class="m in">hey! quick question<span class="t">23:47</span></div>
+  <div class="m out">Thanks for your message! I'm offline until 10:00 and will reply first thing tomorrow.<span class="t">23:47 · auto-reply</span></div>
+  <div class="m in">??<span class="t">23:48</span></div>
+  <div class="m in">ok it's not that quick<span class="t">23:52</span></div>
+  <div class="m in">can you just call me<span class="t">23:58</span></div>
+  <div class="typing"><i></i><i></i><i></i></div>
+ </div>
+ <div class="foot"><h1>"Quick question"<br>is never <em>quick.</em></h1><p class="sub">Communication culture goes both ways.</p></div>
+</div></body></html>
