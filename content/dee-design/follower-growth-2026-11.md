@@ -125,7 +125,7 @@ Clients reading this: what do you wish designers explained on day one?
 One checkout. Three fixes. 60 seconds.
 
 1. Show the total from the start.
-2. Replace "Continue" with what actually happens: "Pay $49".
+2. Replace "Continue" with what happens next: "Pay $49".
 3. Ask only for what you need. 11 fields became 6.
 
 Small changes, but each one removes a reason to leave.
