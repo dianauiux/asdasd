@@ -60,5 +60,7 @@ AI-ը չի փոխարինում դիզայներին։ Այն փոխարինու
 #pixelacademy #դիզայն #ai #uxui #գրաֆիկդիզայն
 ```
 
-## Posting order
-3 → 1 → 2 (value first, then the course). 24 h between reels.
+## Posting schedule (Diana posts herself)
+- Fri 06.11 · 19:30–20:00 · #3 Ինչո՞ւ սովորել դիզայն AI-ի դարում
+- Tue 10.11 · 19:30–20:00 · #1 Ինչո՞ւ են կորցնում հաճախորդներին
+- #2 course reel: after the course name (Claude Design / Claude Code) is confirmed, suggested Thu 12.11
