@@ -122,6 +122,14 @@ details.week summary::-webkit-details-marker{display:none}
 .guide p{margin:0;color:var(--muted);font-size:13.5px}
 .guide a.open{display:inline-block;margin-top:10px;color:#fff;background:var(--grad);text-decoration:none;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
 .soon{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
+.gbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.guide button.open{border:0;cursor:pointer;font:inherit;font-weight:700;font-size:13px;color:#fff;background:var(--grad);padding:6px 12px;border-radius:999px}
+.guide button.open.alt{background:var(--surface);color:var(--accent);border:1px solid var(--accent)}
+.dlnote{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+.dlnote:empty{display:none}
+.gpages{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.gpages img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.guides .guide:has(.gpages:not([hidden])){grid-column:1/-1}
 @media (prefers-reduced-motion:no-preference){.chip,.donebtn,.copy,nav a{transition:background .15s,color .15s,border-color .15s}}
 </style>
 
@@ -233,7 +241,7 @@ details.week summary::-webkit-details-marker{display:none}
 
 <script>
 const UPDATES=[
- {d:"2026-11-06",items:["Ստեղծվեց այս Content Hub-ը. reels, օրացույց, քայլեր, guide-ներ","«CLAUDE» guide · 10 prompt, 2 էջ PDF","8 «քչերը գիտեն» reel (U1–U8) և «Թիմ չունեմ, ունեմ 6 agent» reel-ը՝ սցենար, caption, prompt, wireframe","Comment → Follow → Guide համակարգը ManyChat-ով","Connector-ների ցանկը","12 Claude tutorial reel-ի ամբողջական սցենարները (repo-ում)"]},
+ {d:"2026-11-06",items:["Guide-ները հիմա բացվում են էջի մեջ («Դիտել»), իսկ PDF-ը կարելի է ներբեռնել («Ներբեռնել PDF»)","Ստեղծվեց այս Content Hub-ը. reels, օրացույց, քայլեր, guide-ներ","«CLAUDE» guide · 10 prompt, 2 էջ PDF","8 «քչերը գիտեն» reel (U1–U8) և «Թիմ չունեմ, ունեմ 6 agent» reel-ը՝ սցենար, caption, prompt, wireframe","Comment → Follow → Guide համակարգը ManyChat-ով","Connector-ների ցանկը","12 Claude tutorial reel-ի ամբողջական սցենարները (repo-ում)"]},
  {d:"2026-11-05",items:["Caption և CTA 3 նկարված reel-ի համար. AI-ի դար, հաճախորդներ, Claude Design դասընթաց","Հրապարակման պլան. ուրբ 06, երք 10, հնգ 12","Վիճակագրություն. Dee-ն աճում է, Pixel-ը կանգ է առել, պետք են նոր reel-եր"]},
  {d:"2026-11-04",items:["Dee Design-ի նոր դիրքավորում. Designer · Founder · Mentor · Mom","«Me and my ___» reel սերիա, 2 շաբաթվա Dee պլան","Dee reel-երի storyboard-ներ"]},
  {d:"2026-11-03",items:["Pixel reel-ի caption-ի ուղղում (հղում, հիբրիդային, անձնական նամակ)","LinkedIn պոստ «1:40 am» և քարտ"]},
@@ -324,7 +332,7 @@ const WEEKS=[
 ];
 
 const GUIDES=[
- {kw:"CLAUDE",title:"10 prompt Claude Design-ի համար",desc:"Landing brief, դիզայն համակարգ, DNA, motion spec, scroll, GSAP, art director, ինքնաստուգում։",href:"guides/claude-10-prompts.pdf"},
+ {kw:"CLAUDE",title:"10 prompt Claude Design-ի համար",desc:"Landing brief, դիզայն համակարգ, DNA, motion spec, scroll, GSAP, art director, ինքնաստուգում։",href:"guides/claude-10-prompts.pdf",file:"pixel-academy-claude-10-prompts.pdf",pages:["guides/claude-p1.jpg","guides/claude-p2.jpg"]},
  {kw:"AGENT",title:"Agent-ի ձևանմուշ",desc:"Դեր, նպատակ, գործիքներ, կանոններ, ստուգում։"},
  {kw:"FIGMA",title:"Claude + Figma",desc:"Ինչպես միացնել connector-ը և աշխատել երկու ուղղությամբ։"},
  {kw:"TOKENS",title:"Design tokens checklist",desc:"Գույներ, տառատեսակներ, հեռավորություններ, թեմաներ։"},
@@ -401,13 +409,15 @@ function renderLog(){
   document.getElementById("log").innerHTML=UPDATES.map((u,i)=>{const [y,m,d]=u.d.split("-");return '<div class="day'+(i===0?' today':'')+'"><h3>'+d+'.'+m+'.'+y+(i===0?' <span class="pill">Ամենանորը</span>':'')+'</h3><ul>'+u.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'}).join("");
 }
 function renderGuides(){
-  document.getElementById("guides").innerHTML=GUIDES.map(g=>'<div class="guide"><span class="tag kw">'+esc(g.kw)+'</span><h3>'+esc(g.title)+'</h3><p>'+esc(g.desc)+'</p>'+(g.href?'<a class="open" href="'+g.href+'" target="_blank" rel="noopener">Բացել PDF-ը</a>':'<span class="soon">Պատրաստվում է</span>')+'</div>').join("");
+  document.getElementById("guides").innerHTML=GUIDES.map(g=>'<div class="guide"><span class="tag kw">'+esc(g.kw)+'</span><h3>'+esc(g.title)+'</h3><p>'+esc(g.desc)+'</p>'+(g.href?'<div class="gbtns"><button class="open" data-view-guide="'+g.kw+'" aria-expanded="false">Դիտել</button><button class="open alt" data-dl="'+g.kw+'">Ներբեռնել PDF</button></div><p class="dlnote" id="dln-'+g.kw+'"></p><div class="gpages" id="gp-'+g.kw+'" hidden>'+g.pages.map((s,i)=>'<img src="'+s+'" alt="'+esc(g.title)+', էջ '+(i+1)+'" loading="lazy">').join('')+'</div>':'<span class="soon">Պատրաստվում է</span>')+'</div>').join("");
 }
 function renderAll(){renderReels();renderWeeks()}
 
 /* ---------- events ---------- */
 document.addEventListener("click",async e=>{
   const b=e.target.closest("button[data-done]"); if(b){toggle(b.dataset.done);return}
+  const vg=e.target.closest("button[data-view-guide]"); if(vg){const box=document.getElementById("gp-"+vg.dataset.viewGuide);box.hidden=!box.hidden;vg.setAttribute("aria-expanded",String(!box.hidden));vg.textContent=box.hidden?"Դիտել":"Փակել";return}
+  const dl=e.target.closest("button[data-dl]"); if(dl){const g=GUIDES.find(x=>x.kw===dl.dataset.dl);const n=document.getElementById("dln-"+g.kw);try{const downloads=await window.claude?.use?.("downloads");if(!downloads){n.textContent="Ներբեռնումը այստեղ հասանելի չէ։ Սեղմիր «Դիտել»։";return}const res=await fetch(g.href);if(!res.ok)throw new Error("fetch");const data=await res.blob();await downloads.save({filename:g.file,data});n.textContent=""}catch(err){const c=err&&err.code;n.textContent=c==="declined"?"Ներբեռնումը չեղարկվեց։":c==="rate_limited"?"Մի քանի վայրկյանից նորից փորձիր։":"Չհաջողվեց ներբեռնել։ Սեղմիր «Դիտել»։"}return}
   const rt=e.target.closest("button[data-rt]"); if(rt){const [id,k]=rt.dataset.rt.split(":");reelTab[id]=k;renderReels();return}
   const f=e.target.closest("button[data-f]"); if(f){reelFilter=f.dataset.f;document.querySelectorAll("button[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===f));renderReels();return}
   const g=e.target.closest("a[data-goto]"); if(g){e.preventDefault();reelTab[g.dataset.goto]="script";reelFilter="all";document.querySelectorAll("button[data-f]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"));location.hash="reels";renderReels();requestAnimationFrame(()=>document.getElementById("reel-"+g.dataset.goto)?.scrollIntoView({block:"start"}));return}
