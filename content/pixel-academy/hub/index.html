@@ -1,0 +1,444 @@
+<title>Pixel Content Hub</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky brand header with tabs; one column of content cards, 2-col on wide screens for reels */
+:root{
+  --bg:#fbf7f9; --surface:#ffffff; --sunk:#f4edf1; --line:#eadfe5;
+  --fg:#1b1218; --muted:#6f6169; --faint:#a8999f;
+  --orange:#E43B25; --rose:#E84F8B; --pink:#E86AE0; --accent:#D8336F;
+  --done-bg:#f1eef0; --done-fg:#a39aa0; --ok:#1f8a5b;
+  --grad:linear-gradient(135deg,var(--orange) 0%,var(--rose) 55%,var(--pink) 100%);
+  --f-display:"Noto Sans Armenian",system-ui,sans-serif;
+  --f-body:"Noto Sans Armenian",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#130b10; --surface:#1d1319; --sunk:#26191f; --line:#34242c;
+  --fg:#f6edf2; --muted:#b9a8b1; --faint:#7f6d77; --accent:#FF6FA3;
+  --done-bg:#1a1217; --done-fg:#6f6068; --ok:#4cc58e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#130b10; --surface:#1d1319; --sunk:#26191f; --line:#34242c;
+  --fg:#f6edf2; --muted:#b9a8b1; --faint:#7f6d77; --accent:#FF6FA3;
+  --done-bg:#1a1217; --done-fg:#6f6068; --ok:#4cc58e; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#1b0b12}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:#1b0b12;color:#fff}
+.brand{display:flex;align-items:center;gap:12px;padding-block:14px 8px}
+.mark{width:30px;height:30px;border:6px solid #fff;flex:none}
+.brand h1{font-family:var(--f-display);font-size:18px;font-weight:800;margin:0;letter-spacing:.01em}
+.brand .sub{font-size:12px;color:#d9c6cf;margin-left:auto;text-align:right}
+.bar{height:3px;background:var(--grad)}
+nav{display:flex;gap:4px;overflow-x:auto;padding-block:6px 10px;scrollbar-width:none}
+nav a{flex:none;color:#e8d8e0;text-decoration:none;font-weight:500;font-size:14px;padding:7px 14px;border-radius:999px}
+nav a[aria-current="page"]{background:var(--grad);color:#fff}
+nav a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{padding-block:24px 64px}
+h2{font-family:var(--f-display);font-weight:800;font-size:26px;line-height:1.2;margin:0 0 6px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 22px;max-width:65ch}
+.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.status-note{font-size:12.5px;color:var(--muted);margin:-12px 0 18px}
+/* updates */
+.log{display:flex;flex-direction:column;gap:14px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.day.today{border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--grad) border-box;border:2px solid transparent}
+.day h3{margin:0 0 8px;font-size:15px;display:flex;gap:10px;align-items:center}
+.pill{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff}
+.day ul{margin:0;padding-left:18px}.day li{margin:3px 0}
+/* reels */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:700}
+.reels{display:flex;flex-direction:column;gap:16px}
+.reel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.reel.is-done{background:var(--done-bg);color:var(--done-fg)}
+.reel.is-done .wf svg{opacity:.45}
+.reel-head{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-bottom:1px solid var(--line)}
+.code{font-family:var(--f-mono);font-weight:500;font-size:13px;padding:3px 8px;border-radius:8px;background:var(--sunk);flex:none}
+.reel-head h3{margin:0;font-size:17px;line-height:1.3;text-wrap:balance}
+.hook{margin:4px 0 0;color:var(--muted);font-size:14px}
+.reel.is-done .hook{color:var(--done-fg)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
+.tag.kw{border-color:var(--accent);color:var(--accent);font-weight:700}
+.donebtn{margin-left:auto;flex:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.is-done .donebtn{background:var(--ok);border-color:var(--ok);color:#fff}
+.tabs2{display:flex;gap:2px;padding:10px 18px 0;overflow-x:auto}
+.tabs2 button{border:0;background:none;font:inherit;font-size:13.5px;color:var(--muted);padding:8px 12px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+.tabs2 button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent);font-weight:700}
+.panel{padding:14px 18px 18px}
+.script{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px}
+@media (max-width:760px){.script{grid-template-columns:minmax(0,1fr)}}
+ol.lines{margin:0;padding-left:20px}ol.lines li{margin:6px 0}
+.wf{display:flex;gap:10px;overflow-x:auto}
+.wf figure{margin:0;flex:none;width:92px}
+.wf svg{width:92px;height:auto;display:block}
+.wf figcaption{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.35}
+.block{position:relative;background:var(--sunk);border-radius:10px;padding:12px 14px;margin-top:6px;min-width:0}
+pre.block{font-family:var(--f-mono);font-size:12.5px;line-height:1.5;white-space:pre-wrap;overflow-x:auto;margin:6px 0 0;padding-right:84px}
+.txt{white-space:pre-wrap;font-size:14px;padding-right:84px}
+.copy{position:absolute;top:8px;right:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;font:inherit;font-size:12px;padding:4px 10px;cursor:pointer}
+.copy.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.label{font-size:12px;font-weight:700;color:var(--muted);margin-top:14px}
+.label:first-child{margin-top:0}
+/* calendar */
+.weeks{display:flex;flex-direction:column;gap:12px}
+details.week{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.week.is-done{background:var(--done-bg);color:var(--done-fg)}
+details.week summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;gap:12px;align-items:center}
+details.week summary::-webkit-details-marker{display:none}
+.folder{width:26px;height:20px;flex:none;border-radius:3px 5px 5px 5px;background:var(--grad);position:relative}
+.folder::before{content:"";position:absolute;left:0;top:-5px;width:11px;height:6px;border-radius:3px 3px 0 0;background:inherit}
+.is-done .folder{background:var(--done-fg)}
+.week h3{margin:0;font-size:15.5px}
+.week .range{font-size:12.5px;color:var(--muted)}
+.prog{margin-left:auto;font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.items{list-style:none;margin:0;padding:0 18px 14px;display:flex;flex-direction:column;gap:6px}
+.item{display:grid;grid-template-columns:24px 64px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--sunk)}
+.item.is-done{background:transparent;color:var(--done-fg);text-decoration:line-through}
+.item input{width:18px;height:18px;accent-color:var(--ok);cursor:pointer}
+.when{font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.kind{font-size:11px;border-radius:999px;padding:1px 8px;border:1px solid var(--line);color:var(--muted);text-decoration:none}
+.kind.reel-k{border-color:var(--accent);color:var(--accent)}
+.item a{color:inherit}
+@media (max-width:520px){.item{grid-template-columns:24px minmax(0,1fr) auto}.when{display:none}}
+/* howto */
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.step h3{margin:0 0 8px;font-size:16px}
+.step ol,.step ul{margin:0;padding-left:20px}.step li{margin:4px 0}
+.step .note{font-size:13px;color:var(--muted);margin-top:8px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0 10px}
+.flow span{background:var(--sunk);border-radius:8px;padding:5px 10px;font-size:13px}
+.flow i{font-style:normal;color:var(--faint)}
+/* guides */
+.guides{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.guide h3{margin:4px 0 6px;font-size:15.5px}
+.guide p{margin:0;color:var(--muted);font-size:13.5px}
+.guide a.open{display:inline-block;margin-top:10px;color:#fff;background:var(--grad);text-decoration:none;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.soon{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.chip,.donebtn,.copy,nav a{transition:background .15s,color .15s,border-color .15s}}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><div class="mark" aria-hidden="true"></div><h1>Pixel Content Hub</h1><div class="sub" id="today"></div></div>
+    <nav aria-label="Բաժիններ">
+      <a href="#updates">Թարմացումներ</a>
+      <a href="#reels">Reels</a>
+      <a href="#calendar">Օրացույց</a>
+      <a href="#howto">Ինչպես անել</a>
+      <a href="#guides">Guide-ներ</a>
+    </nav>
+  </div>
+  <div class="bar"></div>
+</header>
+
+<main class="wrap">
+  <section id="v-updates" data-view="updates">
+    <div class="eyebrow">Ինչ է նոր</div>
+    <h2>Թարմացումներ</h2>
+    <p class="lede">Ամեն անգամ, երբ ինչ-որ բան ավելացնեմ, այն կհայտնվի այստեղ՝ ամենանորը վերևում։</p>
+    <div class="log" id="log"></div>
+  </section>
+
+  <section id="v-reels" data-view="reels" hidden>
+    <div class="eyebrow">Pixel Academy · հայերեն · դեմքով + էկրան</div>
+    <h2>Reels. սցենար, caption, prompt</h2>
+    <p class="lede">Յուրաքանչյուր reel-ում կա ձայնի տեքստը, wireframe-ը (ինչպես է երևում կադրը), caption-ը և prompt-ը copy անելու համար։ Նկարելուց հետո սեղմիր «Արված է», ու reel-ը կմոխրանա։</p>
+    <p class="status-note" id="sync-note"></p>
+    <div class="filters" role="group" aria-label="Ֆիլտր">
+      <button class="chip" data-f="all" aria-pressed="true">Բոլորը</button>
+      <button class="chip" data-f="todo" aria-pressed="false">Մնացածը</button>
+      <button class="chip" data-f="done" aria-pressed="false">Արված</button>
+    </div>
+    <div class="reels" id="reels"></div>
+  </section>
+
+  <section id="v-calendar" data-view="calendar" hidden>
+    <div class="eyebrow">Նոյեմբեր 2026</div>
+    <h2>Օրացույց</h2>
+    <p class="lede">Յուրաքանչյուր շաբաթը առանձին թղթապանակ է։ Նշիր արվածը, և երբ շաբաթի բոլոր գործերը արված լինեն, թղթապանակը կմոխրանա։ Reel-ի վրա սեղմելով կբացվի նրա սցենարը։</p>
+    <div class="weeks" id="weeks"></div>
+  </section>
+
+  <section id="v-howto" data-view="howto" hidden>
+    <div class="eyebrow">Քայլ առ քայլ</div>
+    <h2>Ինչպես անել ամեն ինչ</h2>
+    <p class="lede">Շաբաթվա ռիթմը, նկարահանումը, հրապարակումը և comment → follow → guide համակարգը։</p>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Շաբաթվա ռիթմ</h3>
+        <ul>
+          <li><b>Երկուշաբթի առավոտ.</b> կարդա շաբաթական ռեպորտը, ես եմ ուղարկում։ 5 րոպե։</li>
+          <li><b>Չորեքշաբթի.</b> նկարիր 3–4 reel մեկ նստած, 30–40 րոպե, նույն շորերով։</li>
+          <li><b>Երեքշաբթի և ուրբաթ, 19:30–20:00.</b> հրապարակիր reel-ը։</li>
+          <li><b>Հրապարակելուց հետո 30 րոպե.</b> պատասխանիր comment-ներին և կիսիր story-ում։</li>
+          <li><b>Այստեղ.</b> նշիր «Արված է», որ օրացույցը թարմ լինի։</li>
+        </ul>
+      </div>
+      <div class="step">
+        <h3>2. Ինչպես նկարել tutorial reel</h3>
+        <ol>
+          <li>Ձայնագրիր էկրանը (Mac՝ Cmd+Shift+5, iPhone՝ Screen Recording)։ Prompt-ը copy արա այստեղից։</li>
+          <li>Նկարիր քեզ հեռախոսով, պատուհանի լույսի մոտ, ձայնը՝ միկրոֆոնով։ Կարդա «Սցենար» բաժնի տողերը։</li>
+          <li>CapCut-ում. վերևում դու (40%), ներքևում էկրանը (60%), ինչպես wireframe-ում։</li>
+          <li>Auto captions → ստուգիր հայերեն բառերը։ Cover-ի վրա գրիր hook-ը։</li>
+          <li>Վերջին 3 վայրկյանում էկրանին գրիր keyword-ը, օրինակ՝ «Գրիր CLAUDE»։</li>
+        </ol>
+      </div>
+      <div class="step">
+        <h3>3. Comment → Follow → Guide (ManyChat)</h3>
+        <div class="flow"><span>Comment «CLAUDE»</span><i>→</i><span>Ավտոպատասխան comment-ին</span><i>→</i><span>DM + կոճակ</span><i>→</i><span>Follow-ի ստուգում</span><i>→</i><span>Guide-ի հղումը</span></div>
+        <ol>
+          <li>Գրանցվիր manychat.com-ում և միացրու <b>@pixel___academy</b> Instagram հաշիվը։</li>
+          <li>Automation → New → Instagram → trigger «User comments on your post or reel» → ընտրիր reel-ը → keyword <b>CLAUDE</b>։</li>
+          <li>Միացրու ավտոպատասխանը comment-ին. «Ուղարկեցինք անձնական նամակով 📩», «Ստուգիր նամակներդ 🙂», «Guide-ը քո DM-ում է ✨»։</li>
+          <li>Ուղարկիր DM՝ «Բարև 🙂 Guide-ը պատրաստ է։ Ստանալու համար հետևիր @pixel___academy էջին և սեղմիր կոճակը 👇» և կոճակ «Հետևեցի ✅»։</li>
+          <li>Կոճակից հետո ավելացրու պայման՝ «follows your account»։ <b>Այո →</b> ուղարկիր guide-ի հղումը։ <b>Ոչ →</b> «Կարծես դեռ չես հետևում 🙂 Հետևիր և նորից սեղմիր կոճակը»։</li>
+          <li>Փորձիր ուրիշ հաշվից, հետո միացրու automation-ը։</li>
+        </ol>
+        <p class="note">Մենյուների անունները կարող են մի փոքր տարբեր լինել։ Instagram-ը թույլ է տալիս մեկ ավտոմատ պատասխան յուրաքանչյուր comment-ին։ Կոճակը սեղմելուց հետո բացվում է 24 ժամվա պատուհան։ ManyChat-ի գինը և պլանները ստուգիր նրանց կայքում։</p>
+      </div>
+      <div class="step">
+        <h3>4. Guide-ի հղումը</h3>
+        <ol>
+          <li>Ներբեռնիր PDF-ը «Guide-ներ» բաժնից։</li>
+          <li>Վերբեռնիր Google Drive → Share → «Anyone with the link»։</li>
+          <li>Այդ հղումը դիր ManyChat-ի «Այո» նամակի մեջ։</li>
+        </ol>
+      </div>
+      <div class="step">
+        <h3>5. Ինչպես ինձնից նորը խնդրել</h3>
+        <ul>
+          <li>Գրիր chat-ում, օրինակ՝ «ավելացրու hub-ում U4-ի սցենարը» կամ «նոր շաբաթ ավելացրու»։</li>
+          <li>Ես կթարմացնեմ այս էջը, և «Թարմացումներ» բաժնում կգրեմ, թե ինչ է փոխվել։ Հղումը նույնն է մնում։</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-guides" data-view="guides" hidden>
+    <div class="eyebrow">Lead magnets</div>
+    <h2>Guide-ներ</h2>
+    <p class="lede">Այն, ինչ մարդիկ ստանում են keyword գրելուց և follow անելուց հետո։</p>
+    <div class="guides" id="guides"></div>
+  </section>
+</main>
+
+<script>
+const UPDATES=[
+ {d:"2026-11-06",items:["Ստեղծվեց այս Content Hub-ը. reels, օրացույց, քայլեր, guide-ներ","«CLAUDE» guide · 10 prompt, 2 էջ PDF","8 «քչերը գիտեն» reel (U1–U8) և «Թիմ չունեմ, ունեմ 6 agent» reel-ը՝ սցենար, caption, prompt, wireframe","Comment → Follow → Guide համակարգը ManyChat-ով","Connector-ների ցանկը","12 Claude tutorial reel-ի ամբողջական սցենարները (repo-ում)"]},
+ {d:"2026-11-05",items:["Caption և CTA 3 նկարված reel-ի համար. AI-ի դար, հաճախորդներ, Claude Design դասընթաց","Հրապարակման պլան. ուրբ 06, երք 10, հնգ 12","Վիճակագրություն. Dee-ն աճում է, Pixel-ը կանգ է առել, պետք են նոր reel-եր"]},
+ {d:"2026-11-04",items:["Dee Design-ի նոր դիրքավորում. Designer · Founder · Mentor · Mom","«Me and my ___» reel սերիա, 2 շաբաթվա Dee պլան","Dee reel-երի storyboard-ներ"]},
+ {d:"2026-11-03",items:["Pixel reel-ի caption-ի ուղղում (հղում, հիբրիդային, անձնական նամակ)","LinkedIn պոստ «1:40 am» և քարտ"]},
+ {d:"2026-11-02",items:["Շաբաթական ռեպորտ","Կոճակների carousel-ը հրապարակվեց","Մյուլլեր-Բրոկմանի reel-ի տեքստը"]}
+];
+
+const REELS=[
+{id:"U1",title:"Claude-ը ստուգում է իր դիզայնը",hook:"«Գիտե՞ս, որ Claude-ը կարող է նայել իր սարքած կայքին և ուղղել սխալները»",kw:"CLAUDE",
+ frames:[["face","Hook. դու կադրում"],["screen2","Screenshot 390px և 1440px"],["ba","Before / After"]],
+ lines:["Գիտե՞ս, որ Claude-ը կարող է նայել իր սարքած կայքին և ուղղել սխալները։","Ես այսպես եմ աշխատում. Claude-ը սարքում է էջը, բացում է այն բրաուզերում և անում է screenshot՝ հեռախոսի և համակարգչի չափսով։","Հետո համեմատում է օրինակի հետ և ինքն է ուղղում երեք ամենամեծ տարբերությունը։","Pixel-ի բոլոր carousel-ներն ու cover-ները այսպես են արվել։","Գրիր comment-ում CLAUDE, ու կուղարկենք այս prompt-ը և ևս 9-ը։"],
+ prompt:"After you build it, open the page in a browser, take screenshots at 390px and 1440px, compare them with the reference, and fix the top 3 differences. Show me before and after.",
+ caption:"Claude-ը կարող է ստուգել իր սարքած դիզայնը 👀\n\nԱյսպես.\n▫️ սարքում է էջը\n▫️ բացում է բրաուզերում և անում screenshot հեռախոսի ու համակարգչի չափսով\n▫️ համեմատում է օրինակի հետ և ուղղում 3 ամենամեծ տարբերությունը\n\nPixel-ի carousel-ներն ու cover-ները հենց այսպես են արվել։\n\nԳրիր «CLAUDE» comment-ում, ու կուղարկենք prompt-ը և ևս 9-ը 👇\n\n#pixelacademy #claude #claudedesign #uxui #ai",
+ pin:"Prompt-ը և ևս 9-ը կուղարկենք անձնական նամակով. գրիր CLAUDE 👇"},
+{id:"U2",title:"Վերցրու կայքի DNA-ն, ոչ թե կոդը",hook:"«Թույն կայք ես տեսել։ Մի պատճենիր։ Վերցրու նրա DNA-ն»",kw:"CLAUDE",
+ frames:[["face","Hook"],["screen","Ուրիշի կայքի screenshot"],["tokens","Դուրս բերված կանոններ → քո բրենդ"]],
+ lines:["Թույն կայք ես տեսել և ուզում ես նույնը։ Մի պատճենիր։","Տուր Claude-ին screenshot և խնդրիր դուրս բերել միայն համակարգը. տառերի չափսերը, հեռավորությունները, գույների քանակը, animation-ի տևողությունները։","Հետո այդ կանոնները կիրառիր քո բրենդի գույներով։","Այսպես դիզայնը քոնն է, բայց նույն որակի։","Գրիր CLAUDE, ու կուղարկենք prompt-ը։"],
+ prompt:"Analyze this screenshot. Extract the design system only: type scale, spacing scale, number of colors, corner radius, motion durations. Don't copy content or layout. Apply these rules to my brand: [colors, fonts].",
+ caption:"Մի պատճենիր ուրիշի կայքը։ Վերցրու նրա DNA-ն 🧬\n\nClaude-ը screenshot-ից դուրս է բերում.\n▫️ տառերի սանդղակը\n▫️ հեռավորությունները\n▫️ գույների քանակը\n▫️ animation-ի տևողությունները\n\nՀետո կիրառում ես քո բրենդով։ Դիզայնը քոնն է, որակը՝ նույնը։\n\n📌 Պահպանիր։ Գրիր «CLAUDE», ու կուղարկենք prompt-ը 👇\n\n#pixelacademy #claude #webdesign #uxui",
+ pin:"Կարևոր. սկզբունքներն ենք վերցնում, ոչ թե ուրիշի դիզայնն ու կոդը 🙂"},
+{id:"U3",title:"Animation-ը սկսիր motion spec-ից",hook:"«Ինչու՞ են AI animation-ները էժան տեսք ունենում»",kw:"CLAUDE",
+ frames:[["face","Hook"],["table","Motion spec աղյուսակ"],["screen","Արդյունքը շարժման մեջ"]],
+ lines:["Ինչու՞ են AI-ով արված animation-ները էժան տեսք ունենում։","Որովհետև Claude-ին չես տալիս թվերը։","Նախ խնդրիր motion spec. որ տարրը, երբ է շարժվում, քանի միլիվայրկյան, ինչ easing-ով։","150-ից 400 միլիվայրկյան և մեկ easing ամբողջ էջի համար։ Հետո նոր կոդ։","Գրիր CLAUDE, ու կուղարկենք prompt-ը։"],
+ prompt:"Before coding, write a motion spec table: element, trigger, duration (ms), easing (cubic-bezier), delay/stagger. Use 150–400ms and one easing curve for the whole page. Then implement it.",
+ caption:"AI animation-ները էժան տեսք ունեն մեկ պատճառով 👇\n\nԴու չես տալիս թվերը։\n\nՆախ motion spec.\n▫️ տարր և երբ է շարժվում\n▫️ տևողություն՝ 150–400ms\n▫️ մեկ easing ամբողջ էջի համար\n▫️ stagger\n\nՀետո նոր կոդ։\n\n📌 Պահպանիր։ Գրիր «CLAUDE» 👇\n\n#pixelacademy #claude #animation #uxui",
+ pin:"Motion spec-ի prompt-ը guide-ում է. գրիր CLAUDE ✨"},
+{id:"U4",title:"Scroll animation առանց JavaScript-ի",hook:"«2026-ին scroll animation-ի համար JavaScript պետք չէ»",kw:"CLAUDE",
+ frames:[["face","Hook"],["code","CSS. animation-timeline"],["scroll","Scroll-ի ժամանակ բաժինները հայտնվում են"]],
+ lines:["2026-ին scroll animation-ի համար JavaScript պետք չէ։","Ժամանակակից բրաուզերները ունեն CSS scroll-driven animations։","Բաժինը հայտնվում է, երբ մտնում է էկրան, առանց մեկ տող JavaScript-ի։","Քչերն են սա օգտագործում, իսկ Claude-ը գիտի ինչպես։","Գրիր CLAUDE, ու կուղարկենք prompt-ը։"],
+ prompt:"Animate each section as it enters the viewport using CSS scroll-driven animations (animation-timeline: view()). No JavaScript. Add a fallback for unsupported browsers and respect prefers-reduced-motion.",
+ caption:"Scroll animation առանց JavaScript-ի 🤯\n\nCSS scroll-driven animations. ժամանակակից բրաուզերների ֆունկցիա, որ քչերն են օգտագործում։\n\nԲաժինը հայտնվում է, երբ մտնում է էկրան։ Կոդը գրում է Claude-ը։\n\n📌 Պահպանիր։ Գրիր «CLAUDE», ու կուղարկենք prompt-ը 👇\n\n#pixelacademy #claude #css #webdesign",
+ pin:"Prompt-ում կա նաև fallback հին բրաուզերների համար 🙂"},
+{id:"U5",title:"Անվանիր գործիքը",hook:"«Մի գրիր ‹սիրուն animation›։ Գրիր գործիքի անունը»",kw:"CLAUDE",
+ frames:[["face","Hook"],["names","GSAP · Lenis · Framer Motion"],["screen","Pinned hero + scroll"]],
+ lines:["Մի գրիր Claude-ին «սիրուն animation»։","Գրիր գործիքի անունը։ GSAP ScrollTrigger, Lenis smooth scroll-ի համար, Framer Motion React-ի համար։","Անունը տալիս ես, ու Claude-ը օգտագործում է այն, ինչ օգտագործում են մեծ կայքերը։","Տարբերությունը միանգամից երևում է։","Գրիր CLAUDE, ու կուղարկենք prompt-ը։"],
+ prompt:"Use GSAP with ScrollTrigger: pin the hero, scale the product image from 0.8 to 1 while scrolling, then release. Add Lenis for smooth scrolling.",
+ caption:"«Սիրուն animation»-ը prompt չէ 🙅‍♀️\n\nԳրիր գործիքի անունը.\n▫️ GSAP ScrollTrigger՝ scroll animation\n▫️ Lenis՝ սահուն scroll\n▫️ Framer Motion՝ React\n\nԱնունը փոխում է արդյունքը։\n\n📌 Պահպանիր։ Գրիր «CLAUDE» 👇\n\n#pixelacademy #claude #gsap #webdesign",
+ pin:"Ո՞ր գործիքի մասին պատմենք մանրամասն։ 👇"},
+{id:"U6",title:"Claude-ը որպես art director",hook:"«Կայքը պատրաստ է։ Հիմա խնդրիր Claude-ին քննադատել այն»",kw:"CLAUDE",
+ frames:[["face","Hook"],["list","5 խնդիր ըստ կարևորության"],["ba","Ուղղված 3-ը"]],
+ lines:["Կայքը պատրաստ է։ Հիմա ամենակարևոր քայլը։","Խնդրիր Claude-ին լինել senior art director և խիստ քննադատել էջը. հիերարխիա, հեռավորություններ, կոնտրաստ։","Թող գրի 5 ամենամեծ խնդիրը, բայց ուղղի միայն 3-ը։","Այսպես չի փչացնում այն, ինչ արդեն լավ է։","Գրիր CLAUDE, ու կուղարկենք prompt-ը։"],
+ prompt:"Act as a senior art director. Critique this page harshly: hierarchy, spacing, contrast, consistency. List the 5 biggest problems by impact, then fix only the top 3.",
+ caption:"Կայքը պատրաստ է։ Բայց լա՞վն է 🤔\n\nԽնդրիր Claude-ին լինել art director.\n▫️ խիստ քննադատություն\n▫️ 5 խնդիր ըստ կարևորության\n▫️ ուղղել միայն 3-ը\n\nԱյսպես չի փչացնում այն, ինչ արդեն լավ է։\n\n📌 Պահպանիր։ Գրիր «CLAUDE» 👇\n\n#pixelacademy #claude #uxui #design",
+ pin:"Փորձիր քո պորտֆոլիոյի վրա ու գրիր, թե ինչ ասաց 😄"},
+{id:"U7",title:"Կոդից Figma",hook:"«Բոլորը Figma-ից կոդ են սարքում։ Իսկ հակառակը գիտե՞ս»",kw:"FIGMA",
+ frames:[["face","Hook"],["screen","Կոդով սարքած էջը"],["figma","Figma. խմբագրվող շերտեր"]],
+ lines:["Բոլորը Figma-ից կոդ են սարքում։ Իսկ հակառակը գիտե՞ս։","Figma-ի պաշտոնական connector-ով Claude-ը կարող է կոդով սարքած էջը տեղափոխել Figma։","Ոչ թե նկար, այլ խմբագրվող շերտեր։","Դիզայները շարունակում է Figma-ում, ինչպես սովոր է։","Գրիր FIGMA, ու կուղարկենք ինչպես միացնել։"],
+ prompt:"Take this page and send it to Figma as editable layers, using our existing components where possible.",
+ caption:"Կոդ → Figma. քչերն են գիտեն, որ հնարավոր է 👀\n\nFigma-ի connector-ով Claude-ը կոդով սարքած էջը տեղափոխում է Figma՝ խմբագրվող շերտերով։\n\nԴիզայները շարունակում է Figma-ում։\n\nԳրիր «FIGMA», ու կուղարկենք ինչպես միացնել 👇\n\n#pixelacademy #claude #figma #uxui",
+ pin:"Նկարելուց առաջ փորձիր քո Figma հաշվով։",note:"Guide-ը «FIGMA» keyword-ի համար դեռ պատրաստ չէ։ Մինչ այդ օգտագործիր CLAUDE։"},
+{id:"U8",title:"Design tokens մեկ ֆայլով",hook:"«Դիզայները և ծրագրավորողը վիճում են գույների համար»",kw:"TOKENS",
+ frames:[["face","Hook"],["code","tokens.json"],["themes","Light / Dark"]],
+ lines:["Դիզայները և ծրագրավորողը վիճում են գույների համար։","Լուծումը մեկ ֆայլ է՝ design tokens։","Claude-ը էջից դուրս է բերում բոլոր գույները, տառատեսակները, հեռավորությունները և սարքում է tokens.json ու CSS փոփոխականներ։","Light և dark թեմաներով միանգամից։","Գրիր TOKENS, ու կուղարկենք checklist-ը։"],
+ prompt:"Export all colors, fonts, spacing and radii from this page as design tokens in tokens.json and as CSS variables with light and dark themes.",
+ caption:"Դիզայներ vs ծրագրավորող. «սա ո՞ր գույնն է» 😅\n\nԼուծումը design tokens-ն են.\n▫️ բոլոր գույները, տառատեսակները, հեռավորությունները մեկ ֆայլում\n▫️ light և dark թեմաներ\n▫️ նույն լեզուն թիմի համար\n\n📌 Պահպանիր։ Գրիր «TOKENS» 👇\n\n#pixelacademy #designsystem #uxui #claude",
+ pin:"Ծրագրավորող ընկերոջդ էլ ուղարկիր 😄",note:"«TOKENS» guide-ը դեռ պատրաստ չէ։ Մինչ այդ օգտագործիր CLAUDE։"},
+{id:"A1",title:"Թիմ չունեմ։ Ունեմ 6 agent",hook:"«Pixel Academy-ն SMM թիմ չունի։ Ունի AI agent-ներ»",kw:"AGENT",
+ frames:[["face","Hook"],["agents","6 agent-ի քարտեր"],["report","Երկուշաբթի ռեպորտ"]],
+ lines:["Pixel Academy-ն SMM թիմ չունի։ Ունի AI agent-ներ։","Մեկը գրում է caption-ներ և պլանավորում շաբաթը։ Մյուսը ամեն երկուշաբթի բերում է ռեպորտ։ Երրորդը սարքում է cover-ներ և carousel-ներ։","Կարելի է ավելացնել sales agent, որ պատրաստում է նամակների սևագրեր, և agent, որ պատասխանում է ուսանողների հարցերին։","Բայց ամեն ինչ ես եմ հաստատում, ու reel-երը ես եմ նկարում։","Agent-ը թիմակից է, որ աշխատում է գիշերը։ Վերջնական որոշումը միշտ մարդունն է։","Գրիր AGENT, ու կուղարկենք agent-ի ձևանմուշը։"],
+ prompt:"You are the social media assistant for [brand].\nLanguage: Armenian, friendly but literate, \"դու\" form.\nNever invent reviews, numbers, prices, dates or people. If you don't know, ask me.\nEvery post has: a hook in the first line, one useful idea, a save line and a question.\nBefore publishing anything, show me the final version and wait for my OK.",
+ caption:"Թիմ չունե՞ս։ Հավաքիր agent-ներով 🤖\n\nՄեզ մոտ աշխատում են.\n▫️ SMM agent՝ caption-ներ, պլան, ժամանակացույց\n▫️ Analyst՝ երկուշաբթի ռեպորտ\n▫️ Content designer՝ cover-ներ, carousel-ներ\n\nԿարելի է ավելացնել.\n▫️ Sales՝ նամակների սևագրեր\n▫️ Student support՝ FAQ\n▫️ Research՝ թրենդներ և նորություններ\n\nԲայց վերջնական որոշումը միշտ մարդունն է։\n\nԳրիր «AGENT», ու կուղարկենք agent-ի ձևանմուշը 👇\n\n#pixelacademy #claude #aiagent #smm",
+ pin:"Agent-ի գլխավոր կանոնը՝ «եթե չգիտես, հարցրու, մի հորինիր» 🙂",note:"«AGENT» guide-ը դեռ պատրաստ չէ։ Prompt-ը արդեն կա այստեղ։"}
+];
+
+const WEEKS=[
+ {id:"w45",label:"Շաբաթ 1",range:"2–8 նոյեմբեր",items:[
+  {id:"p-ai-era",date:"06.11 Ուրբ",kind:"reel",title:"Reel. Ինչո՞ւ սովորել դիզայն AI-ի դարում · 19:30"},
+  {id:"t-manychat",date:"07.11 Շբթ",kind:"task",title:"Գրանցվել ManyChat-ում և միացնել CLAUDE automation-ը"},
+  {id:"t-domain",date:"08.11 Կիր",kind:"task",title:"Գրանցել pixelacademy.am դոմենը"}]},
+ {id:"w46",label:"Շաբաթ 2",range:"9–15 նոյեմբեր",items:[
+  {id:"p-clients",date:"10.11 Երք",kind:"reel",title:"Reel. Ինչո՞ւ են կորցնում հաճախորդներին · 19:30"},
+  {id:"t-film1",date:"11.11 Չրք",kind:"task",title:"Նկարահանում. U1, U2, U3, A1 (30–40 րոպե)"},
+  {id:"t-course-name",date:"11.11 Չրք",kind:"task",title:"Հաստատել դասընթացի անունը. Claude Design, թե Claude Code"},
+  {id:"p-course",date:"12.11 Հնգ",kind:"reel",title:"Reel. Նոր դասընթաց Claude Design · 19:30"},
+  {id:"U1",date:"13.11 Ուրբ",kind:"reel",title:"U1 · Claude-ը ստուգում է իր դիզայնը",ref:"U1"}]},
+ {id:"w47",label:"Շաբաթ 3",range:"16–22 նոյեմբեր",items:[
+  {id:"A1",date:"17.11 Երք",kind:"reel",title:"A1 · Թիմ չունեմ։ Ունեմ 6 agent",ref:"A1"},
+  {id:"t-vercel",date:"18.11 Չրք",kind:"task",title:"Միացնել Vercel Web Analytics-ը կայքում"},
+  {id:"t-film2",date:"18.11 Չրք",kind:"task",title:"Նկարահանում. U4, U5, U6, U7"},
+  {id:"U2",date:"20.11 Ուրբ",kind:"reel",title:"U2 · Վերցրու կայքի DNA-ն",ref:"U2"}]},
+ {id:"w48",label:"Շաբաթ 4",range:"23–29 նոյեմբեր",items:[
+  {id:"U3",date:"24.11 Երք",kind:"reel",title:"U3 · Animation-ը սկսիր motion spec-ից",ref:"U3"},
+  {id:"U6",date:"27.11 Ուրբ",kind:"reel",title:"U6 · Claude-ը որպես art director",ref:"U6"}]},
+ {id:"w-next",label:"Հաջորդ",range:"դեկտեմբեր",items:[
+  {id:"U4",date:"—",kind:"reel",title:"U4 · Scroll animation առանց JavaScript-ի",ref:"U4"},
+  {id:"U5",date:"—",kind:"reel",title:"U5 · Անվանիր գործիքը",ref:"U5"},
+  {id:"U7",date:"—",kind:"reel",title:"U7 · Կոդից Figma",ref:"U7"},
+  {id:"U8",date:"—",kind:"reel",title:"U8 · Design tokens",ref:"U8"}]}
+];
+
+const GUIDES=[
+ {kw:"CLAUDE",title:"10 prompt Claude Design-ի համար",desc:"Landing brief, դիզայն համակարգ, DNA, motion spec, scroll, GSAP, art director, ինքնաստուգում։",href:"guides/claude-10-prompts.pdf"},
+ {kw:"AGENT",title:"Agent-ի ձևանմուշ",desc:"Դեր, նպատակ, գործիքներ, կանոններ, ստուգում։"},
+ {kw:"FIGMA",title:"Claude + Figma",desc:"Ինչպես միացնել connector-ը և աշխատել երկու ուղղությամբ։"},
+ {kw:"TOKENS",title:"Design tokens checklist",desc:"Գույներ, տառատեսակներ, հեռավորություններ, թեմաներ։"},
+ {kw:"CONNECT",title:"Connector-ների ցանկ",desc:"Figma, Canva, Notion, Drive, Gmail, Calendar, Slack, GitHub, Vercel և ուրիշներ՝ ում ինչ է պետք։"}
+];
+
+/* ---------- state ---------- */
+const done=new Map();
+let dbCol=null;
+const LS="pixelhub-done";
+function lsLoad(){try{const o=JSON.parse(localStorage.getItem(LS)||"{}");Object.entries(o).forEach(([k,v])=>done.set(k,!!v))}catch(e){}}
+function lsSave(){try{localStorage.setItem(LS,JSON.stringify(Object.fromEntries(done)))}catch(e){}}
+function isDone(id){return done.get(id)===true}
+async function toggle(id){
+  const next=!isDone(id); done.set(id,next); renderAll();
+  if(dbCol){try{await dbCol.doc(id).set({done:next,at:new Date().toISOString()})}catch(e){note("Չհաջողվեց պահել։ Ստուգիր կապը և փորձիր նորից։")}}
+  else lsSave();
+}
+function note(t){const n=document.getElementById("sync-note");if(n)n.textContent=t}
+
+/* ---------- wireframes ---------- */
+function wf(kind){
+  const P='stroke="currentColor" fill="none" stroke-width="2"';
+  const frame='<rect x="2" y="2" width="88" height="156" rx="12" '+P+'/>';
+  const face=(y,h)=>'<rect x="8" y="'+y+'" width="76" height="'+h+'" rx="6" fill="var(--sunk)"/><circle cx="46" cy="'+(y+h*0.45)+'" r="'+Math.min(14,h*0.25)+'" '+P+'/><path d="M30 '+(y+h-4)+' q16 -18 32 0" '+P+'/>';
+  const bar='<rect x="12" y="14" width="68" height="10" rx="5" fill="var(--accent)" opacity=".85"/>';
+  const lines=(y)=>[0,1,2].map(i=>'<rect x="14" y="'+(y+i*8)+'" width="'+(56-i*12)+'" height="4" rx="2" fill="currentColor" opacity=".35"/>').join('');
+  let body='';
+  switch(kind){
+   case 'face': body=face(10,140)+bar; break;
+   case 'screen': body=face(8,52)+'<rect x="8" y="66" width="76" height="84" rx="6" '+P+'/>'+lines(78)+'<rect x="14" y="110" width="40" height="10" rx="5" fill="var(--accent)" opacity=".6"/>'; break;
+   case 'screen2': body=face(8,52)+'<rect x="8" y="70" width="22" height="40" rx="3" '+P+'/><rect x="34" y="70" width="50" height="34" rx="3" '+P+'/><text x="19" y="124" font-size="7" fill="currentColor" text-anchor="middle">390</text><text x="59" y="118" font-size="7" fill="currentColor" text-anchor="middle">1440</text>'; break;
+   case 'ba': body=face(8,52)+'<rect x="8" y="66" width="36" height="84" rx="4" '+P+' stroke-dasharray="3 3"/><rect x="48" y="66" width="36" height="84" rx="4" '+P+'/><text x="26" y="112" font-size="7" fill="currentColor" text-anchor="middle">before</text><text x="66" y="112" font-size="7" fill="var(--accent)" text-anchor="middle">after</text>'; break;
+   case 'tokens': body=face(8,52)+[0,1,2,3].map(i=>'<rect x="'+(12+i*18)+'" y="72" width="14" height="14" rx="3" fill="'+['var(--orange)','var(--rose)','var(--pink)','currentColor'][i]+'"/>').join('')+'<text x="12" y="104" font-size="12" font-weight="700" fill="currentColor">Aa</text>'+lines(112); break;
+   case 'table': body=face(8,52)+[0,1,2,3,4].map(i=>'<line x1="10" x2="82" y1="'+(72+i*14)+'" y2="'+(72+i*14)+'" stroke="currentColor" opacity=".4"/>').join('')+'<line x1="40" x2="40" y1="66" y2="140" stroke="currentColor" opacity=".4"/><text x="12" y="70" font-size="6" fill="currentColor">ms · easing</text>'; break;
+   case 'code': body=face(8,52)+'<rect x="8" y="66" width="76" height="84" rx="6" fill="currentColor" opacity=".12"/>'+[0,1,2,3,4,5].map(i=>'<rect x="'+(14+(i%2)*8)+'" y="'+(76+i*10)+'" width="'+(30+(i*13)%30)+'" height="4" rx="2" fill="'+(i==2?'var(--accent)':'currentColor')+'" opacity=".6"/>').join(''); break;
+   case 'scroll': body=face(8,52)+[0,1,2].map(i=>'<rect x="14" y="'+(70+i*26)+'" width="64" height="20" rx="4" '+P+' opacity="'+(1-i*0.3)+'"/>').join('')+'<path d="M82 74 v60 m-4 -6 l4 6 l4 -6" '+P+'/>'; break;
+   case 'names': body=face(8,52)+['GSAP','Lenis','Framer'].map((t,i)=>'<rect x="12" y="'+(70+i*24)+'" width="68" height="18" rx="9" fill="var(--sunk)" stroke="var(--accent)"/><text x="46" y="'+(82+i*24)+'" font-size="8" font-weight="700" fill="var(--accent)" text-anchor="middle">'+t+'</text>').join(''); break;
+   case 'list': body=face(8,52)+[1,2,3,4,5].map(i=>'<text x="12" y="'+(74+i*13)+'" font-size="8" font-weight="700" fill="'+(i<=3?'var(--accent)':'currentColor')+'">'+i+'</text><rect x="22" y="'+(68+i*13)+'" width="56" height="4" rx="2" fill="currentColor" opacity=".35"/>').join(''); break;
+   case 'figma': body=face(8,52)+'<rect x="8" y="66" width="20" height="84" rx="3" fill="var(--sunk)"/>'+[0,1,2,3].map(i=>'<rect x="11" y="'+(72+i*10)+'" width="14" height="4" rx="2" fill="currentColor" opacity=".4"/>').join('')+'<rect x="34" y="74" width="46" height="66" rx="4" '+P+'/><rect x="40" y="82" width="34" height="8" rx="2" fill="var(--accent)" opacity=".7"/>'; break;
+   case 'themes': body=face(8,52)+'<rect x="8" y="66" width="36" height="84" rx="4" fill="#fff" stroke="currentColor"/><rect x="48" y="66" width="36" height="84" rx="4" fill="#1b1218" stroke="currentColor"/><rect x="14" y="76" width="24" height="5" rx="2" fill="#1b1218"/><rect x="54" y="76" width="24" height="5" rx="2" fill="#fff"/>'; break;
+   case 'agents': body=face(8,52)+[0,1,2,3,4,5].map(i=>'<rect x="'+(10+(i%2)*38)+'" y="'+(68+Math.floor(i/2)*28)+'" width="34" height="22" rx="5" fill="'+(i<3?'var(--accent)':'var(--sunk)')+'" opacity="'+(i<3?.8:1)+'" stroke="currentColor" stroke-width="'+(i<3?0:1)+'" stroke-dasharray="'+(i<3?'0':'3 2')+'"/>').join(''); break;
+   case 'report': body=face(8,52)+'<rect x="8" y="66" width="76" height="84" rx="6" '+P+'/>'+[22,40,30,52].map((h,i)=>'<rect x="'+(18+i*16)+'" y="'+(140-h)+'" width="10" height="'+h+'" rx="2" fill="'+(i==3?'var(--accent)':'currentColor')+'" opacity="'+(i==3?1:.35)+'"/>').join(''); break;
+  }
+  return '<svg viewBox="0 0 92 160" role="img" aria-hidden="true">'+frame+body+'</svg>';
+}
+
+/* ---------- render ---------- */
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+let reelFilter="all"; const reelTab={};
+function copyBtn(key){return '<button class="copy" data-copy="'+key+'">Copy</button>'}
+function renderReels(){
+  const el=document.getElementById("reels");
+  el.innerHTML=REELS.filter(r=>reelFilter==="all"||(reelFilter==="done")===isDone(r.id)).map(r=>{
+    const t=reelTab[r.id]||"script"; const d=isDone(r.id);
+    let panel="";
+    if(t==="script") panel='<div class="script"><div style="min-width:0"><div class="label">Ձայն (ինչ ես ասում)</div><ol class="lines">'+r.lines.map(l=>'<li>'+esc(l)+'</li>').join('')+'</ol><div class="label">Prompt (ցույց տուր էկրանին)</div><pre class="block" id="p-'+r.id+'">'+esc(r.prompt)+copyBtn("prompt:"+r.id)+'</pre>'+(r.note?'<p class="hook" style="margin-top:10px">⚠️ '+esc(r.note)+'</p>':'')+'</div><div style="min-width:0"><div class="label">Wireframe (կադրերը)</div><div class="wf">'+r.frames.map(f=>'<figure>'+wf(f[0])+'<figcaption>'+esc(f[1])+'</figcaption></figure>').join('')+'</div></div></div>';
+    if(t==="caption") panel='<div class="label">Caption</div><div class="block txt">'+esc(r.caption)+copyBtn("caption:"+r.id)+'</div>';
+    if(t==="prompt") panel='<div class="label">Prompt</div><pre class="block">'+esc(r.prompt)+copyBtn("prompt:"+r.id)+'</pre>';
+    if(t==="pin") panel='<div class="label">Pin comment</div><div class="block txt">'+esc(r.pin)+copyBtn("pin:"+r.id)+'</div><div class="label">Keyword</div><div class="block txt">'+esc(r.kw)+copyBtn("kw:"+r.id)+'</div>';
+    const tabs=[["script","Սցենար"],["caption","Caption"],["prompt","Prompt"],["pin","Pin + keyword"]];
+    return '<article class="reel'+(d?' is-done':'')+'" id="reel-'+r.id+'"><div class="reel-head"><span class="code">'+r.id+'</span><div style="min-width:0"><h3>'+esc(r.title)+'</h3><p class="hook">'+esc(r.hook)+'</p><div class="meta"><span class="tag kw">'+esc(r.kw)+'</span><span class="tag">20–35 վրկ</span><span class="tag">դեմք + էկրան</span></div></div><button class="donebtn" data-done="'+r.id+'" aria-pressed="'+d+'">'+(d?'✓ Արված է':'Արված է')+'</button></div><div class="tabs2" role="tablist">'+tabs.map(([k,l])=>'<button role="tab" aria-selected="'+(k===t)+'" data-rt="'+r.id+':'+k+'">'+l+'</button>').join('')+'</div><div class="panel" role="tabpanel">'+panel+'</div></article>';
+  }).join("")||'<p class="lede">Այստեղ դեռ ոչինչ չկա։</p>';
+}
+function renderWeeks(){
+  document.getElementById("weeks").innerHTML=WEEKS.map((w,wi)=>{
+    const n=w.items.filter(i=>isDone(i.id)).length, all=n===w.items.length;
+    const open=!all&&(wi===0||WEEKS.slice(0,wi).every(p=>p.items.every(i=>isDone(i.id)))||wi<=1);
+    return '<details class="week'+(all?' is-done':'')+'"'+(open?' open':'')+'><summary><span class="folder" aria-hidden="true"></span><div><h3>'+esc(w.label)+'</h3><div class="range">'+esc(w.range)+'</div></div><span class="prog">'+n+' / '+w.items.length+(all?' · ավարտված':'')+'</span></summary><ul class="items">'+w.items.map(i=>{const d=isDone(i.id);const t=i.ref?'<a href="#reels" data-goto="'+i.ref+'">'+esc(i.title)+'</a>':esc(i.title);return '<li class="item'+(d?' is-done':'')+'"><input type="checkbox" id="cb-'+i.id+'" data-done="'+i.id+'"'+(d?' checked':'')+' aria-label="Արված է"><span class="when">'+esc(i.date)+'</span><label for="cb-'+i.id+'" style="min-width:0">'+t+'</label><span class="kind'+(i.kind==="reel"?' reel-k':'')+'">'+(i.kind==="reel"?'reel':'գործ')+'</span></li>'}).join('')+'</ul></details>';
+  }).join("");
+}
+function renderLog(){
+  const today=new Date().toISOString().slice(0,10);
+  document.getElementById("log").innerHTML=UPDATES.map((u,i)=>{const [y,m,d]=u.d.split("-");return '<div class="day'+(i===0?' today':'')+'"><h3>'+d+'.'+m+'.'+y+(i===0?' <span class="pill">Ամենանորը</span>':'')+'</h3><ul>'+u.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'}).join("");
+}
+function renderGuides(){
+  document.getElementById("guides").innerHTML=GUIDES.map(g=>'<div class="guide"><span class="tag kw">'+esc(g.kw)+'</span><h3>'+esc(g.title)+'</h3><p>'+esc(g.desc)+'</p>'+(g.href?'<a class="open" href="'+g.href+'" target="_blank" rel="noopener">Բացել PDF-ը</a>':'<span class="soon">Պատրաստվում է</span>')+'</div>').join("");
+}
+function renderAll(){renderReels();renderWeeks()}
+
+/* ---------- events ---------- */
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("button[data-done]"); if(b){toggle(b.dataset.done);return}
+  const rt=e.target.closest("button[data-rt]"); if(rt){const [id,k]=rt.dataset.rt.split(":");reelTab[id]=k;renderReels();return}
+  const f=e.target.closest("button[data-f]"); if(f){reelFilter=f.dataset.f;document.querySelectorAll("button[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===f));renderReels();return}
+  const g=e.target.closest("a[data-goto]"); if(g){e.preventDefault();reelTab[g.dataset.goto]="script";reelFilter="all";document.querySelectorAll("button[data-f]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.f==="all"));location.hash="reels";renderReels();requestAnimationFrame(()=>document.getElementById("reel-"+g.dataset.goto)?.scrollIntoView({block:"start"}));return}
+  const c=e.target.closest("button[data-copy]"); if(c){
+    const [k,id]=c.dataset.copy.split(":"); const r=REELS.find(x=>x.id===id); const text={prompt:r.prompt,caption:r.caption,pin:r.pin,kw:r.kw}[k];
+    try{await navigator.clipboard.writeText(text);c.textContent="✓ Copied";c.classList.add("ok");setTimeout(()=>{c.textContent="Copy";c.classList.remove("ok")},1600)}
+    catch(err){const host=c.parentElement;const s=window.getSelection();const rg=document.createRange();rg.selectNodeContents(host);s.removeAllRanges();s.addRange(rg);c.textContent="Ընտրված է, Cmd+C"}
+  }
+});
+document.addEventListener("change",e=>{const cb=e.target.closest("input[data-done]");if(cb)toggle(cb.dataset.done)});
+
+/* ---------- routing ---------- */
+const VIEWS=["updates","reels","calendar","howto","guides"];
+function route(){const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):"updates";document.querySelectorAll("[data-view]").forEach(s=>s.hidden=s.dataset.view!==v);document.querySelectorAll("nav a").forEach(a=>{if(a.getAttribute("href")==="#"+v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
+window.addEventListener("hashchange",()=>{route();window.scrollTo(0,0)});
+
+/* ---------- boot ---------- */
+document.getElementById("today").textContent=new Date().toLocaleDateString("hy-AM",{day:"numeric",month:"long",year:"numeric"});
+lsLoad(); renderLog(); renderGuides(); renderAll(); route();
+(async()=>{
+  try{
+    const db=await window.claude?.use?.("db");
+    if(!db){note("Նշումները պահվում են միայն այս բրաուզերում։");return}
+    dbCol=db.collection("status");
+    let first=true; const timer=setTimeout(()=>note("Պահված նշումները դեռ չեն բեռնվել։"),10000);
+    dbCol.onSnapshot(snap=>{
+      if(!snap.metadata?.fromCache){clearTimeout(timer);note("")}
+      snap.docs.forEach(d=>{const v=d.data();done.set(d.id,!!(v&&v.done))});
+      if(first){first=false}
+      renderAll();
+    },err=>{clearTimeout(timer);note("Նշումները չհաջողվեց բեռնել։ Թարմացրու էջը մի փոքր ուշ։")});
+  }catch(e){note("Նշումները պահվում են միայն այս բրաուզերում։")}
+})();
+</script>
