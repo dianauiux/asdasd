@@ -1,5 +1,7 @@
 # LinkedIn · Engagement pack · important topics · Nov 2026
 
+_v2: rewritten in a warmer, more conversational voice: fewer lists, more small moments, no arrows. Hooks below are still options; the post text is the recommended version._
+
 Account: Diana (Dee Design) · English · worldwide
 Goal: comments, followers, shares. Each post is about something people already argue about, and ends with a question that's easy to answer in one line.
 Posting window: 17:00–18:30 Yerevan. Space them 2–3 days apart, and don't post two debate posts back to back.
@@ -22,24 +24,21 @@ Posting window: 17:00–18:30 Yerevan. Space them 2–3 days apart, and don't po
 3. I'll say what many designers think and don't post.
 
 ```
-A 3-day unpaid test task isn't a hiring process. It's free work.
+Someone sent me their "small test task" last week and asked if it was normal.
 
-I'm not against tests. A short one tells both sides a lot. But somewhere along the way, "small test task" turned into: redesign our onboarding, 4 screens, a clickable prototype, and a presentation for the team.
+It was a full onboarding redesign. Four screens, a clickable prototype, and a presentation for the team. Deadline: Monday.
 
-For a job that might get 200 applicants.
+No, that's not normal. That's a project.
 
-Here's what a fair test looks like to me:
-→ 2 to 3 hours, not 3 days
-→ A made-up problem, not your real backlog
-→ Paid if it goes over a few hours
-→ Feedback for everyone who sends it in, even a short note
+I'm not against test tasks. A short one helps both sides, and I'd rather see how someone thinks than just read a CV. But two or three hours is a test. Three days of unpaid work, for a role with 200 applicants, is something else.
 
-Companies that do this get better candidates. The strongest designers are the ones with the least free time to spare.
+And it filters out the wrong people. The designers with the least free time are often the ones already doing great work somewhere.
 
-Designers: what's the longest test task you've been asked to do?
-Hiring managers: what's a test that works for you?
+If you're hiring, keep it short, make the problem up instead of using your real backlog, and send everyone a few lines of feedback. People remember that.
 
-#UXDesign #Hiring #DesignCareers #ProductDesign
+What's the longest test task anyone has asked you to do?
+
+#UXDesign #Hiring #DesignCareers
 ```
 
 ---
@@ -52,25 +51,19 @@ Hiring managers: what's a test that works for you?
 3. Seniors: someone gave you your first chance. Who was it?
 
 ```
-If you're a junior designer who's sent 150 applications and heard nothing, this is for you.
+This one is for the junior designer who's sent 150 applications and is starting to think something is wrong with them.
 
-It's not only you. Most design job posts now ask for senior people, and every junior role gets hundreds of applicants. Nielsen Norman Group's State of UX 2026 says the same: more people want to get into UX than there are open roles, especially at the junior level.
+There isn't.
 
-So the usual advice ("polish your portfolio, apply more") isn't enough anymore.
+The market right now is hard in a way it wasn't a few years ago. Most job posts want senior people. Every junior role gets hundreds of applications. Even Nielsen Norman Group's State of UX 2026 says it plainly: more people want to get into UX than there are open roles, and juniors feel it most.
 
-What I see working for the people I mentor:
-→ Fewer, deeper projects. 3 case studies you can explain in one sentence each.
-→ Real problems. Redesign a flow at a local business and show what changed.
-→ Talking to people, not only applying. One warm introduction beats 50 cold applications.
-→ Showing your thinking in public. A post about one design decision gets you seen.
+So "just apply more" doesn't help. What I've seen help is slower and more human. Fewer projects, but ones you can talk about for ten minutes without notes. A real problem from a real business, even a tiny local one. And talking to people. One person who says "you should meet her" is worth more than fifty cold applications.
 
-And to the seniors reading this: someone gave you your first chance. A review of one portfolio, one referral, one 20-minute call. It costs us very little.
+To the seniors here: somebody once gave you a chance. Looked at your portfolio, sent one message, took a call they didn't have to take. It's our turn now.
 
-Seniors: who gave you your first chance in design?
+Who gave you your first chance in design? I'd love to read these.
 
-Share this with a junior designer who needs it today.
-
-#UXDesign #JuniorDesigner #DesignCareers #Mentorship
+#UXDesign #JuniorDesigner #DesignCareers
 ```
 
 ---
@@ -85,23 +78,19 @@ Share this with a junior designer who needs it today.
 3. AI didn't fire anyone. A decision did.
 
 ```
-Another company announced layoffs "because of AI" this week.
+Another layoff announcement this week. Another "because of AI."
 
-I read these announcements differently now. "Because of AI" can mean three very different things:
+I don't read these the way I used to.
 
-1. AI really does that work faster now, and the company reorganized around it.
-2. The company is spending heavily on AI and cut people to pay for it.
-3. Cuts were coming anyway, and AI is the easiest story to tell investors.
+Sometimes it's true. The work changed and the company changed with it. Sometimes the company is spending a fortune on AI and the people are how they pay for it. And sometimes the cuts were coming anyway, and AI is just the nicest story to tell investors.
 
-From the outside they sound the same. For the people affected, and for the people who stay, they mean very different things.
+From the outside, it all sounds the same. For the person packing up their desk, it doesn't matter much which one it was.
 
-What I tell designers worried about this: the work that's hard to automate is the work closest to decisions. Knowing why users leave. Choosing what not to build. Explaining a trade-off to a founder in plain words.
+I think about the designers I talk to who are scared right now. What I tell them is simple, not easy: stay close to the decisions. Know why users leave. Be the person who can tell a founder "let's not build this" and explain why. That part is hard to hand to a tool.
 
-If your job is mostly producing screens from someone else's decisions, that's the part to grow out of, starting now.
+Which story do you think is the most common one right now?
 
-Which of the three do you think is most common right now?
-
-#FutureOfWork #AI #ProductDesign #Layoffs
+#FutureOfWork #AI #ProductDesign
 ```
 
 ---
@@ -118,15 +107,15 @@ Post as a **LinkedIn poll** (1 week). Polls get shown widely, and the comments c
 - AI made it irrelevant
 
 ```
-Quick poll, because I keep hearing both answers from people I respect.
+Okay, I need your help settling something.
 
-Now that AI can turn a design into working code, some say designers should finally learn to code. Others say it matters less than ever.
+I keep having this conversation with designers I respect, and they land on completely opposite sides. Now that AI can turn a design into working code, should designers finally learn to code? Or does it matter less than ever?
 
-I have my answer. I'll share it in the comments on Friday.
+I have my answer. I'll share it on Friday, after I see how you vote.
 
-Vote, then tell me why below. 👇
+Vote, and if you've got a reason, drop it below. Those are the comments I read twice. 👇
 
-#ProductDesign #UXDesign #AI #Frontend
+#ProductDesign #UXDesign #AI
 ```
 
 On Friday: pin a comment with your view (suggestion: "Enough to talk to devs and judge what AI builds. Not enough to replace them."). The second wave of comments comes from that.
@@ -141,24 +130,19 @@ On Friday: pin a comment with your view (suggestion: "Enough to talk to devs and
 3. An AI can write your case study. It can't answer the follow-up question.
 
 ```
-Recruiters and hiring managers, a question for you.
+A question for recruiters and hiring managers, because I'm curious.
 
-Can you tell when a design portfolio was made with AI?
+Can you tell when a portfolio was written by AI?
 
-I review a lot of junior portfolios, and more and more of them look the same. Same structure, same polished sentences, same "empathized with users to define the problem." The screens look great. The thinking is hard to find.
+I've started noticing a pattern. Same structure, same smooth sentences, the same "empathized with users to define the problem." The screens look great. And then I get to the end and realize I have no idea how this person thinks.
 
-I don't think using AI is the problem. I use it every day. The problem is when the case study sounds sure of itself, and the person can't answer "why did you choose this?" in the interview.
+To be clear, I use AI every day. That's not the issue. The issue is a case study that sounds very sure of itself, from someone who can't explain one decision in it when you ask.
 
-What still stands out to me:
-→ A decision you made and what you gave up for it
-→ Something that didn't test well, and what you changed
-→ Your own voice, even if the English isn't perfect
+What still makes me stop scrolling is the human stuff. A choice that cost something. A test that didn't go the way they hoped. A sentence in slightly imperfect English that clearly came from them.
 
-Recruiters: what's the first thing that tells you a portfolio is real?
+Recruiters, what's the first thing that tells you a portfolio is real?
 
-Designers: save this before you update yours.
-
-#UXDesign #Recruiting #Portfolio #AI
+#UXDesign #Recruiting #Portfolio
 ```
 
 ---
@@ -178,4 +162,4 @@ Designers: save this before you update yours.
 - [x] Five shapes: opinion with rules, support + call to seniors, three options, poll, question to recruiters
 - [x] Every post has a comment question; posts 2 and 5 also have a share/save line
 - [x] No invented clients or company numbers. Post 3 names no company. Post 2 cites NN/g's State of UX 2026.
-- [ ] Diana: post 2 says "the people I mentor" and post 5 says "I review a lot of junior portfolios". Keep both only if they're true to your experience.
+- [ ] Diana: three lines are written as your own experience. Post 1: "Someone sent me their test task last week." Post 3: "designers I talk to." Post 5: "I've started noticing a pattern" in portfolios. Keep them only if they're true, or swap in your own real moment. That's what makes them feel human.
