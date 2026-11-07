@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#131210;--cream:#ECE5D8;--org:#E84E1B;--mut:#8C857A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;padding:30px}
+.b{width:1200px;height:1200px;background:var(--ink);position:relative;overflow:hidden;color:var(--cream);font-family:Syne,sans-serif}
+.grid{position:absolute;inset:0 60px;display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none}
+.grid i{border-left:1px solid rgba(236,229,216,.06)}.grid i:last-child{border-right:1px solid rgba(236,229,216,.06)}
+.grain{position:absolute;inset:0;opacity:.11;mix-blend-mode:screen}
+.crop{position:absolute;width:26px;height:26px;border-color:rgba(236,229,216,.5);border-style:solid}
+.tl{top:28px;left:28px;border-width:2px 0 0 2px}.tr{top:28px;right:28px;border-width:2px 2px 0 0}.bl{bottom:28px;left:28px;border-width:0 0 2px 2px}.br{bottom:28px;right:28px;border-width:0 2px 2px 0}
+.hdr{position:absolute;top:60px;left:60px;right:60px;display:flex;justify-content:space-between;font:500 20px Syne;letter-spacing:.06em;padding-bottom:18px;border-bottom:1px solid rgba(236,229,216,.18)}
+.hdr b{font-weight:600}.hdr span{color:var(--mut)}
+.fig{color:var(--org)!important}
+.chat{position:absolute;top:140px;left:50%;transform:translateX(-50%) rotate(-2deg) scale(.9);transform-origin:top center;width:640px;background:var(--cream);border-radius:36px;padding:30px 30px 36px;color:var(--ink);font-family:Inter,sans-serif;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.top{display:flex;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid rgba(19,18,16,.12);margin-bottom:22px}
+.av{width:52px;height:52px;border-radius:50%;background:#C9BFAE;display:flex;align-items:center;justify-content:center;font:600 22px Syne}
+.top b{display:block;font:600 22px Inter}.top small{font-size:16px;color:#2f8f4e;font-weight:500}
+.m{width:fit-content;max-width:78%;padding:15px 20px;border-radius:22px;font-size:22px;line-height:1.3;margin-bottom:12px;position:relative}
+.in{background:#fff;border-bottom-left-radius:6px}
+.out{background:var(--org);color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+.t{display:block;font-size:14px;opacity:.55;margin-top:6px}
+.typing{display:inline-flex;gap:7px;background:#fff;padding:18px 22px;border-radius:22px;border-bottom-left-radius:6px}
+.typing i{width:10px;height:10px;border-radius:50%;background:#b4ab9c}
+.foot{position:absolute;left:60px;right:60px;bottom:70px}
+h1{font:600 92px/0.98 Syne;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--org)}
+.sub{font:500 26px Syne;color:var(--mut);margin-top:22px}
+
+.cv{position:absolute;top:150px;left:120px;right:120px;height:600px;border:1px solid rgba(236,229,216,.14);border-radius:18px;background:rgba(236,229,216,.03)}
+.lbl{position:absolute;top:-30px;left:0;font:500 16px Inter;color:var(--mut);letter-spacing:.04em}
+.phone{position:absolute;left:90px;top:60px;width:300px;height:480px;border-radius:30px;background:var(--cream);padding:28px 22px;color:var(--ink);font-family:Inter}
+.ln{height:14px;border-radius:7px;background:#CFC6B6;margin-bottom:12px}
+.btn{height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font:600 18px Inter;margin-top:14px}
+.p1{background:var(--ink);color:var(--cream)}
+.p2{background:var(--org);color:#fff;outline:none;position:relative}
+.cur{position:absolute;left:330px;top:350px}
+.tag{position:absolute;left:24px;top:26px;background:var(--org);color:#fff;font:600 17px Inter;padding:6px 12px;border-radius:8px;white-space:nowrap}
+.note{position:absolute;right:80px;top:110px;width:270px;background:#F3D98B;color:var(--ink);padding:26px 24px 30px;font:500 23px/1.3 Inter;transform:rotate(3deg);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.note small{display:block;font:500 14px Inter;opacity:.6;margin-top:14px}
+.dash{position:absolute;left:420px;right:360px;top:330px;border-top:2px dashed rgba(236,229,216,.35)}
+.x{white-space:nowrap;position:absolute;left:50%;top:-22px;transform:translateX(-50%);font:600 22px Inter;color:var(--mut);background:var(--ink);padding:0 10px}
+h1{font-size:80px}
+</style></head><body>
+<div class="b" id="banner">
+ <svg class="grain" width="1200" height="1200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+ <div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <div class="crop tl"></div><div class="crop tr"></div><div class="crop bl"></div><div class="crop br"></div>
+ <div class="hdr"><b>@deeuxui</b><span><span class="fig" style="font-family:Inter;font-weight:600">FIG.0X</span> &nbsp;·&nbsp; AI AGENTS</span></div>
+ <div class="cv"><span class="lbl">Checkout / mobile</span>
+  <div class="phone"><div class="ln" style="width:60%;height:20px;background:#B9AF9E"></div><div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:70%;margin-bottom:150px"></div>
+   <div class="btn p1">Pay now</div><div class="btn p2">Pay now</div></div>
+  <div class="cur"><svg width="34" height="40" viewBox="0 0 34 40"><path d="M2 2 L2 34 L11 26 L17 39 L23 36 L17 24 L30 24 Z" fill="#E84E1B" stroke="#131210" stroke-width="2"/></svg><span class="tag">Agent</span></div>
+  <div class="dash"><span class="x">can't see</span></div>
+  <div class="note">Never two primary buttons on one screen.<small>said in standup, 2024</small></div>
+ </div>
+ <div class="foot"><h1>The agent reads your<br>design system. <em>Not your mind.</em></h1><p class="sub">Agents follow what's written down.</p></div>
+</div></body></html>
