@@ -378,7 +378,7 @@ What's the most duplicated component in your product?
 ```
 In [year], I designed my first component library. It had [number] components. We used about [smaller number].
 
-That project taught me that a design system is only worth what people actually use.
+That project taught me that a design system is only worth what people use every day.
 
 Now I build them the other way around. I start with what the team uses every day, and add only when someone asks for something twice.
 
