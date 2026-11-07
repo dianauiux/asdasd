@@ -24,7 +24,7 @@ Posting window: 17:00–18:30 Yerevan. Space them 2–3 days apart, and don't po
 3. I'll say what many designers think and don't post.
 
 ```
-Someone sent me their "small test task" last week and asked if it was normal.
+One of my students sent me their "small test task" last week and asked if it was normal.
 
 It was a full onboarding redesign. Four screens, a clickable prototype, and a presentation for the team. Deadline: Monday.
 
@@ -162,4 +162,4 @@ Recruiters, what's the first thing that tells you a portfolio is real?
 - [x] Five shapes: opinion with rules, support + call to seniors, three options, poll, question to recruiters
 - [x] Every post has a comment question; posts 2 and 5 also have a share/save line
 - [x] No invented clients or company numbers. Post 3 names no company. Post 2 cites NN/g's State of UX 2026.
-- [ ] Diana: three lines are written as your own experience. Post 1: "Someone sent me their test task last week." Post 3: "designers I talk to." Post 5: "I've started noticing a pattern" in portfolios. Keep them only if they're true, or swap in your own real moment. That's what makes them feel human.
+- [ ] Diana: three lines are written as your own experience. Post 3: "designers I talk to." Post 5: "I've started noticing a pattern" in portfolios. Keep them only if they're true, or swap in your own real moment. That's what makes them feel human.
