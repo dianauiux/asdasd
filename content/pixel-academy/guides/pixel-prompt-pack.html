@@ -1,0 +1,103 @@
+<!doctype html><html lang="hy"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=JetBrains+Mono&family=Noto+Sans+Armenian:wght@400;700;800&display=swap" rel="stylesheet"><style>@page{size:A4;margin:14mm 14mm 14mm}*{margin:0;box-sizing:border-box}body{font-family:'Noto Sans Armenian','Inter',sans-serif;color:#141014;font-size:10pt}
+.cover{margin:0 0 6mm;padding:10mm 11mm 9mm;border-radius:4mm;color:#fff;background:#0D0304 url(../brand/gradient-1080x1350.png) center/cover}
+.logo{height:10mm}.kick{margin-top:7mm;font-size:10pt;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+h1{font-size:24pt;line-height:1.15;margin-top:3mm;font-weight:800}.cover p{margin-top:2.5mm;font-size:10.5pt;opacity:.92;max-width:160mm}
+.toc{margin:5mm 0 0 5mm;font-size:10pt;opacity:.95}.toc li{margin:1mm 0}
+h2.sec{margin:7mm 0 4mm;padding-bottom:2mm;border-bottom:2px solid #E84F8B;display:flex;align-items:baseline;gap:4mm;break-after:avoid}
+h2.sec span{font-size:15pt;font-weight:800}h2.sec small{font-size:9.5pt;color:#6b5f66;font-weight:400}
+.c{border:1px solid #eee3e8;border-radius:3.5mm;padding:3.5mm 4.5mm;margin-bottom:3.5mm;break-inside:avoid}
+.h{display:flex;gap:3.5mm;align-items:center}.n{font-family:Inter;font-weight:800;font-size:13pt;background:linear-gradient(135deg,#E43B25,#E84F8B 55%,#E86AE0);-webkit-background-clip:text;color:transparent}
+.t{font-weight:700;font-size:11.5pt}
+pre{margin-top:2.2mm;background:#f7f2f5;border-radius:2.5mm;padding:3mm 3.5mm;font-family:'JetBrains Mono',monospace;font-size:8pt;line-height:1.42;white-space:pre-wrap;color:#2a1f26}
+.cta{margin-top:5mm;padding:4mm 5mm;border-radius:3.5mm;color:#fff;background:linear-gradient(135deg,#E43B25,#E84F8B 55%,#E86AE0);font-size:10.5pt;line-height:1.4;break-inside:avoid}</style></head><body><section class="cover"><img src="../brand/logo-white.png" class="logo"><div class="kick">Prompt pack · Pixel Academy</div><h1>21 prompt, որ մենք օգտագործում ենք</h1><p>Copy արա, փոխիր [քառակուսի փակագծերը] և աշխատիր Claude-ով, ChatGPT-ով, v0-ով կամ Figma Make-ով։ Յուրաքանչյուր prompt մեր reel-երից է։</p><ol class="toc"><li><b>Claude-ի գաղտնիքները</b> · Դիզայն, animation և ինքնաստուգում Claude-ով</li><li><b>AI + Դիզայն</b> · v0, ChatGPT, Figma Make, Claude Code և ուրիշ գործիքներ</li><li><b>Pixel-ի կուլիսները</b> · SMM agent-ի կանոնների ձևանմուշ</li></ol></section><h2 class="sec"><span>Claude-ի գաղտնիքները</span><small>Դիզայն, animation և ինքնաստուգում Claude-ով</small></h2><div class="c"><div class="h"><span class="n">01</span><div class="t">Claude-ը ստուգում է իր դիզայնը</div></div><pre>After you build it, open the page in a browser, take screenshots at 390px and 1440px, compare them with the reference, and fix the top 3 differences. Show me before and after.</pre></div><div class="c"><div class="h"><span class="n">02</span><div class="t">Կայքի DNA-ն</div></div><pre>Analyze this screenshot. Extract the design system only: type scale, spacing scale, number of colors, corner radius, motion durations. Don&#x27;t copy content or layout. Apply these rules to my brand: [colors, fonts].</pre></div><div class="c"><div class="h"><span class="n">03</span><div class="t">Motion spec</div></div><pre>Before coding, write a motion spec table: element, trigger, duration (ms), easing (cubic-bezier), delay/stagger. Use 150–400ms and one easing curve for the whole page. Then implement it.</pre></div><div class="c"><div class="h"><span class="n">04</span><div class="t">Claude-ը որպես art director</div></div><pre>Act as a senior art director. Critique this page harshly: hierarchy, spacing, contrast, consistency. List the 5 biggest problems by impact, then fix only the top 3.</pre></div><div class="c"><div class="h"><span class="n">05</span><div class="t">Scroll animation առանց JS-ի</div></div><pre>Animate each section as it enters the viewport using CSS scroll-driven animations (animation-timeline: view()). No JavaScript. Add a fallback for unsupported browsers and respect prefers-reduced-motion.</pre></div><div class="c"><div class="h"><span class="n">06</span><div class="t">Անվանիր գործիքը</div></div><pre>Use GSAP with ScrollTrigger: pin the hero, scale the product image from 0.8 to 1 while scrolling, then release. Add Lenis for smooth scrolling.</pre></div><div class="c"><div class="h"><span class="n">07</span><div class="t">Կոդից Figma</div></div><pre>Take this page and send it to Figma as editable layers, using our existing components where possible.</pre></div><div class="c"><div class="h"><span class="n">08</span><div class="t">Design tokens</div></div><pre>Export all colors, fonts, spacing and radii from this page as design tokens in tokens.json and as CSS variables with light and dark themes.</pre></div><div class="c"><div class="h"><span class="n">09</span><div class="t">Landing page-ի ճիշտ brief</div></div><pre>Design a landing page for [product].
+Users: [who they are]. Goal: [one action they should take].
+Style: [2–3 words], one accent color [#hex], references: [site 1], [site 2].
+Give me 3 different visual directions first, with a short explanation each.
+Don&#x27;t build the full page until I choose one.</pre></div><div class="c"><div class="h"><span class="n">10</span><div class="t">Միայն քո դիզայն համակարգով</div></div><pre>Here is our design system: colors, fonts, buttons and cards (attached).
+Design a [page] using only these tokens and components.
+If something is missing, tell me instead of inventing a new style.</pre></div><div class="c"><div class="h"><span class="n">11</span><div class="t">«Թրենդային» 4 բառով</div></div><pre>Redesign this section to feel current, not generic:
+- typography: very large headline, tight letter spacing, one font family
+- space: at least 120px between sections
+- color: neutral base, one accent color only
+- motion: subtle hover animation on buttons and cards (200ms ease)
+Keep the content the same.</pre></div><div class="c"><div class="h"><span class="n">12</span><div class="t">Hero animation մեկ ֆայլով</div></div><pre>Create a hero section animation in HTML and CSS only:
+- the headline appears letter by letter, 40ms per letter
+- the background is a slow-moving gradient (pink to orange), 12s loop
+- respect prefers-reduced-motion
+Give me one file I can open in the browser.</pre></div><h2 class="sec"><span>AI + Դիզայն</span><small>v0, ChatGPT, Figma Make, Claude Code և ուրիշ գործիքներ</small></h2><div class="c"><div class="h"><span class="n">13</span><div class="t">Figma-ից կայք Claude Code-ով</div></div><pre>Implement this Figma design: [Figma URL]
+
+Use the existing design system where available.
+Match typography, spacing, colors, and layout.
+Build responsive desktop and mobile views.
+Add working interactions.
+Run the project and report any differences from Figma.</pre></div><div class="c"><div class="h"><span class="n">14</span><div class="t">ChatGPT-ն օգնում է prompt կազմել</div></div><pre>Act as a senior UX/UI designer.
+
+Help me create a detailed prompt for an AI website builder.
+
+Ask me about:
+- Business and target audience
+- Website goals
+- Pages and sections
+- Visual style
+- Key user actions
+- Mobile requirements
+
+Then create one structured website-generation prompt.</pre></div><div class="c"><div class="h"><span class="n">15</span><div class="t">Նույն prompt-ը 3 գործիքում</div></div><pre>Design a sign-up page for a 4-month UX/UI design course.
+
+Include: a headline, 3 key benefits, a short sign-up form (name, email, phone), and one primary button.
+Style: modern, confident, lots of white space, one accent color.
+Make it responsive.</pre></div><div class="c"><div class="h"><span class="n">16</span><div class="t">Աշխատող պրոտոտիպ Figma Make-ով</div></div><pre>Build an interactive appointment booking page.
+
+Include:
+- Date selection
+- Available time slots
+- Name and email fields
+- Form validation
+- Confirmation state
+- Responsive mobile layout
+
+Use a clean, minimal interface.</pre></div><div class="c"><div class="h"><span class="n">17</span><div class="t">Կայք առանց կոդի v0-ով</div></div><pre>Create a responsive website for a family bakery in Yerevan.
+
+Goal: visitors order a custom cake in under a minute.
+Style: warm, handmade, cream and deep cherry, generous white space.
+Sections: Hero with order button, Bestsellers, Custom cake form, About the family, Location and hours.
+Use strong typography and a mobile-first layout.</pre></div><div class="c"><div class="h"><span class="n">18</span><div class="t">Accessibility Claude-ով</div></div><pre>Audit this page for accessibility (WCAG 2.2 AA).
+
+Check:
+- Text contrast (at least 4.5:1 for body text)
+- Tap target size (aim for 44×44 px; the WCAG 2.2 AA minimum is 24×24 px)
+- Missing alt text and form labels
+- Keyboard focus visibility
+
+List each problem with the element, why it matters, and the exact fix. Then apply the fixes without changing the visual style.</pre></div><div class="c"><div class="h"><span class="n">19</span><div class="t">UX սխալներ ChatGPT-ով</div></div><pre>Act as a senior UX/UI designer.
+
+Analyze this landing page screenshot.
+
+Review:
+- Visual hierarchy
+- CTA visibility
+- Readability
+- Spacing and alignment
+- Clarity of user journey
+
+Identify 3 specific potential UX problems.
+Explain why each matters and suggest a practical fix.
+Do not assume user behavior without evidence.</pre></div><div class="c"><div class="h"><span class="n">20</span><div class="t">Հաշվիչ v0-ով + դիզայների քայլը</div></div><pre>Build a responsive service pricing calculator.
+
+Features:
+- Select a service
+- Enter quantity
+- Choose optional extras
+- Calculate total price automatically
+- Show a clear pricing summary
+- Add a reset button
+
+Use a modern minimal UI.
+Make all calculations functional.
+
+--- Step 2 (design pass) ---
+Improve the visual design: one accent color, make the total the most prominent element, group options into clear sections, tap targets at least 44px.</pre></div><h2 class="sec"><span>Pixel-ի կուլիսները</span><small>SMM agent-ի կանոնների ձևանմուշ</small></h2><div class="c"><div class="h"><span class="n">21</span><div class="t">SMM agent-ի կանոններ</div></div><pre>You are the social media assistant for [brand].
+Language: Armenian, friendly but literate, &quot;դու&quot; form.
+Never invent reviews, numbers, prices, dates or people. If you don&#x27;t know, ask me.
+Every post has: a hook in the first line, one useful idea, a save line and a question.
+Before publishing anything, show me the final version and wait for my OK.</pre></div><div class="cta"><b>Ուզու՞մ ես սովորել սա մեզ հետ։</b> Claude Design դասընթաց UX/UI դիզայներների համար · գրիր մեզ անձնական նամակով <b>@pixel___academy</b></div></body></html>
