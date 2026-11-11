@@ -1,0 +1,195 @@
+[
+ {
+  "id": "plan",
+  "title": "Պլան և bio",
+  "help": "Dee Design-ի դիրքավորումը, bio-ն և հրապարակումների պլանը։ Ամեն ինչ անգլերեն է։",
+  "items": [
+   {
+    "badge": "Instagram bio",
+    "title": "Bio և անուն",
+    "text": "Product designer · Founder @pixel___academy\nMentor · Mom of one\nDesign, business & AI from Yerevan\nWork with me ↓\n\nName: Dee | Designer · Founder · Mom",
+    "hashtags": ""
+   },
+   {
+    "badge": "Պլան",
+    "title": "Հրապարակումների պլան",
+    "text": "Thu 05.11 · LinkedIn · Text + card · \"1:40 am in Yerevan\"\nFri 06.11 · IG · Reel · funny · Me and my website at 2 am\nSun 08.11 · IG · Reel · night · 1:40 am in Yerevan\nTue 10.11 · IG · Reel · funny · Me and my 47 browser tabs\nWed 11.11 · LinkedIn · Text · \"AI designs a screen in 10 seconds. So why hire a designer?\"\nThu 12.11 · IG · Reel · serious · Me and my portfolio: 3 projects, not 10\nSat 14.11 · IG · Carousel · Things my one-year-old taught me about UX\nMon 16.11 · IG · Reel · funny · Me and my one-year-old fighting for the laptop\nWed 18.11 · IG · Reel · serious · Me and my students: they need feedback",
+    "note": "Posting 17:00–18:30 Yerevan. 4 reels in one 30-min session.",
+    "hashtags": ""
+   },
+   {
+    "badge": "Դիրքավորում",
+    "title": "Designer · Founder · Mentor · Mom",
+    "text": "Dee Design · new positioning · Nov 2026\n\n**Designer · Founder · Mentor · Mom.** Building products and a school from Yerevan, for the world.\n\n Bio (113/150)\n\nName field: `Dee | Designer · Founder · Mom`\n\n Content mix (per 2 weeks, ~4–5 posts)\n| Role | Share | Goal |\n|---|---|---|\n| Designer | 30% | trust, clients |\n| Mom × Designer | 25% | reach, relatability |\n| Founder | 20% | trust, Pixel Academy |\n| Mentor | 15% | saves, follows |\n| Business woman | 10% | clients, LinkedIn crossover |",
+    "hashtags": ""
+   },
+   {
+    "badge": "Կանոններ",
+    "title": "Ինչ չենք անում",
+    "text": "Child: hands only, never face or name.\nLessons, not mistakes.\nNo credential flex.\nNo em-dashes.\nEnglish only on Dee Design.",
+    "hashtags": ""
+   }
+  ]
+ },
+ {
+  "id": "reels",
+  "title": "Reels",
+  "help": "Դեմքով reel-եր, որոնցից շատերը առանց խոսքի են։ Նկարվում են տանը, սեղանի մոտ։",
+  "items": [
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my website at 2 am",
+    "script": "Me and my website at 2 am",
+    "note": "You: Laptop light, you hug the laptop screen",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my Figma file named final_FINAL_v7",
+    "script": "Me and my Figma file named final_FINAL_v7",
+    "note": "You: Scroll the layers panel, slow look at camera",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my portfolio before a job interview",
+    "script": "Me and my portfolio before a job interview",
+    "note": "You: Hold the laptop like a baby, whisper \"you got this\" (lip-sync, no audio needed)",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my client after the 5th round of feedback",
+    "script": "Me and my client after the 5th round of feedback",
+    "note": "You: Two coffee cups, you raise one, tired smile",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my one-year-old fighting for the laptop",
+    "script": "Me and my one-year-old fighting for the laptop",
+    "note": "You: Only a small hand reaching for the keyboard, you move the laptop away, laugh",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my 47 browser tabs",
+    "script": "Me and my 47 browser tabs",
+    "note": "You: Zoom out on the tab bar, you cover your face",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my AI tool pretending we're a team",
+    "script": "Me and my AI tool pretending we're a team",
+    "note": "You: Point at screen, then at yourself, high five the laptop",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · funny · no talking",
+    "title": "Me and my calendar on a Monday",
+    "script": "Me and my calendar on a Monday",
+    "note": "You: Show phone calendar full of blocks, slowly lie your head on the desk",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · serious · no talking",
+    "title": "Me and my portfolio: 3 projects, not 10",
+    "script": "Me and my portfolio: 3 projects, not 10",
+    "note": "You: Scroll a clean portfolio, nod at camera. Text 2: \"Quality > quantity.\"",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · serious · no talking",
+    "title": "Me and my students: they don't need more lessons. They need feedback.",
+    "script": "Me and my students: they don't need more lessons. They need feedback.",
+    "note": "You: Look at camera, then screen with comments in Figma",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · serious · no talking",
+    "title": "Me and my rule: no design before the problem is clear",
+    "script": "Me and my rule: no design before the problem is clear",
+    "note": "You: Close laptop, write \"Problem?\" on a sticky note, stick it on the screen",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · serious · no talking",
+    "title": "Me and my school, my clients, my kid. One laptop. Yerevan.",
+    "script": "Me and my school, my clients, my kid. One laptop. Yerevan.",
+    "note": "You: Calm look at camera, laptop open, toy blocks next to it",
+    "hashtags": "#designerlife #uxdesign #momdesigner #founderlife"
+   },
+   {
+    "badge": "Reel · talking · 20–25 s",
+    "title": "AI designs a screen in 10 seconds. So why hire a designer?",
+    "script": "0–3 վրկ · Էկրանին՝ AI designs a screen in 10 seconds. So why hire a designer?\nՁայն՝ AI can design a screen in ten seconds.\n3–6 վրկ · Էկրանին՝ Sped-up screen recording: AI generating a UI\nՁայն՝ It looks finished. Clean. Modern.\n6–12 վրկ · Էկրանին՝ Your face\nՁայն՝ But it doesn't know your users. It doesn't know why people leave at step three.\n12–16 վրկ · Էկրանին՝ Your notes / user flow / sticky notes\nՁայն՝ It doesn't know what your support team hears every day.\n16–20 վրկ · Էկրանին՝ Your face\nՁայն՝ That's the part I design. Not the pixels. The decisions behind them.\n20–24 վրկ · Էկրանին՝ \"AI is my fastest tool. Not my replacement.\"\nՁայն՝ AI is my fastest tool. It's not my replacement.",
+    "text": "AI can design a screen in 10 seconds.\n\nIt can't tell you why users leave at step three.\nIt can't hear what your support team hears every day.\nIt can't decide what to remove.\n\nThat's the job now. Not the pixels. The decisions behind them.\n\nAI is my fastest tool. It's not my replacement.\n\nDesigners: which part of your job can AI still not do? 👇\n\n#aidesign #uxdesign #productdesign #designerlife",
+    "note": "Caption-ը՝ «Caption» դաշտում",
+    "hashtags": ""
+   },
+   {
+    "badge": "Reel · no talking · 12–15 s",
+    "title": "Can you make it pop?",
+    "script": "0–2 վրկ · Էկրանին՝ Client: \"Can you make it pop?\"\nԴու՝ Look at your laptop, slowly turn to the camera 😐\n2–6 վրկ · Էկրանին՝ Translation: \"Something feels off. I can't name it.\"\nԴու՝ Small nod, \"I know\" face\n6–10 վրկ · Էկրանին՝ What I do: ask \"Where does your eye go first?\"\nԴու՝ Point at the screen\n10–13 վրկ · Էկրանին՝ That's usually where the problem is.\nԴու՝ Smile, close laptop\n13–15 վրկ · Էկրանին՝ Client → English · Part 2 next week\nԴու՝ —",
+    "text": "Client: \"Can you make it pop?\"\nTranslation: \"Something feels off and I can't name it yet.\"\n\nSo I ask one question: \"Where does your eye go first?\"\nThat's usually where the problem is.\n\nClient → English is a new series. Part 2 next week.\n\nWhat's the client line you hear the most? 👇\n\n#designerlife #designhumor #uxdesign #designclients",
+    "note": "Caption-ը՝ «Caption» դաշտում",
+    "hashtags": ""
+   }
+  ]
+ },
+ {
+  "id": "linkedin",
+  "title": "LinkedIn",
+  "help": "Անձնական պատմություններ և կարծիքներ հաճախորդների ու hiring մասնագետների համար։",
+  "items": [
+   {
+    "badge": "LinkedIn · text + card",
+    "title": "1:40 am in Yerevan",
+    "text": "I'm writing this at 1:40 am in Yerevan. Everyone at home is asleep.\n\nMy day starts with my child and ends long after their bedtime. In between: family, home, the product team I design with, and Pixel Academy, a school I started for people who want to get into design. Client work gets the quiet hours, when New York is still in the afternoon.\n\nPeople ask how I fit it all in. Some weeks I don't. Something gets less of me, and it's usually sleep.\n\nBut I wouldn't trade it. My family, my work, and teams on the other side of the world trusting me with their product, all from one laptop in Yerevan.\n\nWhat time is it where you're reading this?\n\n#WorkingMom #ProductDesign #RemoteWork #Armenia",
+    "note": "Image: content/dee-design/linkedin/2026-11-1am-yerevan.png",
+    "hashtags": ""
+   },
+   {
+    "badge": "LinkedIn + IG carousel",
+    "title": "\"Small test task\"",
+    "text": "One of my students sent me their \"small test task\" last week and asked if it was normal.\n\nIt was a full onboarding redesign. Four screens, a clickable prototype, and a presentation for the team. Deadline: Monday.\n\nNo, that's not normal. That's a project.\n\nI'm not against test tasks. A short one helps both sides, and I'd rather see how someone thinks than just read a CV. But two or three hours is a test. Three days of unpaid work, for a role with 200 applicants, is something else.\n\nAnd it filters out the wrong people. The designers with the least free time are often the ones already doing great work somewhere.\n\nIf you're hiring, keep it short, make the problem up instead of using your real backlog, and send everyone a few lines of feedback. People remember that.\n\nWhat's the longest test task anyone has asked you to do?\n\n#UXDesign #Hiring #DesignCareers",
+    "note": "Slide 1 uses your photo, slide 2: \"If you're hiring, keep it fair.\"",
+    "hashtags": ""
+   },
+   {
+    "badge": "LinkedIn · text",
+    "title": "AI designs a screen in 10 seconds. So why hire a designer?",
+    "text": "AI can design a screen in 10 seconds.\n\nIt can't tell you why users leave at step three.\nIt can't hear what your support team hears every day.\nIt can't decide what to remove.\n\nThat's the job now. Not the pixels. The decisions behind them.\n\nAI is my fastest tool. It's not my replacement.\n\nDesigners: which part of your job can AI still not do? 👇\n\n#aidesign #uxdesign #productdesign #designerlife",
+    "hashtags": ""
+   }
+  ]
+ },
+ {
+  "id": "posts",
+  "title": "Պոստեր",
+  "help": "Carousel-ներ և պոստեր Instagram-ի համար։",
+  "items": [
+   {
+    "badge": "Carousel",
+    "title": "Things my one-year-old taught me about UX",
+    "slides": [
+     "Things my one-year-old taught me about UX",
+     "Big targets win. Small buttons get ignored.",
+     "If it isn't obvious, it gets used the wrong way.",
+     "Repetition is how people learn a pattern.",
+     "Nobody reads the manual.",
+     "Save this for your next usability review."
+    ],
+    "text": "I design products for adults. My best usability teacher is one year old.\n\nBig targets win. Nothing obvious? It gets used the wrong way. Repetition builds habits. And nobody reads the manual.\n\nWhich one do you see most in your product? 👇\nSave this for your next usability review.\n\n#uxdesign #momdesigner #productdesign #usability",
+    "hashtags": ""
+   },
+   {
+    "badge": "Carousel",
+    "title": "Communication culture",
+    "text": "We spend a lot of time teaching designers how to talk to clients.\n\nBe clear. Be polite. Reply on time. Explain your decisions.\n\nAll true. But we rarely talk about the other side of the conversation.\n\nRespect in a project goes both ways. And most clients aren't being difficult on purpose. Nobody ever showed them how a designer works.\n\nSo I don't wait for problems. I set the rules before the project starts:\n\n→ My working hours and when to expect a reply\n→ One channel for feedback, not five\n→ What \"urgent\" means, and what can wait until morning\n→ How many revision rounds we have, and how to give useful feedback\n→ When I'm in deep work and won't be checking messages\n\nIt takes 15 minutes on the first call. It saves weeks of frustration on both sides.\n\nA client who knows how you work trusts you faster. A designer who explains how they work gets treated like a partner, not a vendor.\n\nClear boundaries don't create distance. They create respect.\n\nSave this for your next kickoff call.\n\nDesigners: do you set these rules on day one, or do you learn them the hard way?\nClients: what do you wish your designer had told you at the start?\n\n#designclients #productdesign #uxdesign #freelancedesigner #designbusiness",
+    "hashtags": ""
+   }
+  ]
+ }
+]
