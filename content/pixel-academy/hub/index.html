@@ -176,7 +176,7 @@ nav a.newlink{border:1px solid rgba(255,255,255,.35)}
 .ck input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--ok)}
 .ck input:checked+span{color:var(--done-fg);text-decoration:line-through}
 .gp-go{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--sunk);border-radius:10px;padding:10px 12px;text-decoration:none;color:inherit;font-size:14.5px}.gp-go:hover{outline:1px solid var(--accent)}.gp-go small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}.gp-go i{font-style:normal;color:var(--accent);font-weight:800;flex:none}
-.dsec .item-card{scroll-margin-top:190px}
+.dsec .item-card,.reel{scroll-margin-top:190px}
 .ck small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;text-decoration:none}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ba>div{border-radius:10px;padding:12px;font-size:14px}
@@ -274,6 +274,25 @@ nav a.newlink{border:1px solid rgba(255,255,255,.35)}
     <div class="eyebrow">Վերջին թարմացումները</div>
     <h2>Թարմացումներ</h2>
     <p class="lede">Այստեղ կտեսնես նոր ավելացված նյութերը՝ ամենավերջինը՝ առաջինը։</p>
+    <div class="gp-card" style="border:2px solid var(--accent);margin-bottom:18px">
+        <h3>📌 Pixel · Այս շաբաթ նկարիր և հրապարակիր (23–29.11)</h3>
+        <p class="gp-sub">Pixel-ի թվերով ամենաուժեղը դու ես կադրում՝ մեկ հարցով կամ կարծիքով («AI-ի դարում»՝ 772 reach, «Հաճախորդներ»՝ 474 reach և 10 share)։ Carousel-ները 4–5 անգամ քիչ reach ունեն, դրանց վերջում հարց դիր։</p>
+        <ul class="ck">
+          <li><a class="gp-go" href="#reels" data-goto="reel-U3"><span><b>Երք 24.11 · 19:30 · Motion spec (U3)</b><small>Reel · Pixel → Reels</small></span><i>Բացել →</i></a></li>
+          <li><a class="gp-go" href="#reels" data-goto="reel-U6"><span><b>Ուրբ 27.11 · 19:30 · Claude-ը որպես art director (U6)</b><small>Reel · Pixel → Reels</small></span><i>Բացել →</i></a></li>
+        </ul>
+        <p class="gp-sub" style="margin:12px 0 6px"><b>Դեկտեմբերի առաջին պոստերը (պատրաստ են).</b></p>
+        <ul class="ck">
+          <li><a class="gp-go" href="#dec" data-goto="d2-dec-0212"><span><b>Չրք 02.12 · Carousel · Հայերեն անվճար տառատեսակներ</b><small>Դեկտեմբեր · save-երի համար</small></span><i>Բացել →</i></a></li>
+          <li><a class="gp-go" href="#dec" data-goto="d2-dec-0412"><span><b>Ուրբ 04.12 · Reel · Դիզայները լսում է սա ամեն օր</b><small>Դեկտեմբեր · share-երի համար, Trial Reel</small></span><i>Բացել →</i></a></li>
+          <li><a class="gp-go" href="#dec" data-goto="d2-dec-1112"><span><b>Ուրբ 11.12 · Reel · Մեկ լոգո՝ 100 000 դոլար</b><small>Դեկտեմբեր · follow-ի համար, շարք</small></span><i>Բացել →</i></a></li>
+        </ul>
+        <p class="gp-sub" style="margin:12px 0 6px"><b>Պահուստ՝ «Դիզայնի անսպասելի պատմություններ».</b></p>
+        <ul class="ck">
+          <li><a class="gp-go" href="#reels" data-goto="reel-H1"><span><b>H1 · Նավեր, որոնք ոչ թե թաքցնում էին, այլ շփոթեցնում</b><small>Reel · Pixel → Reels</small></span><i>Բացել →</i></a></li>
+          <li><a class="gp-go" href="#reels" data-goto="reel-H3"><span><b>H3 · Քարտեզ, որը միտումնավոր չի պահպանում աշխարհագրությունը</b><small>Reel · Pixel → Reels</small></span><i>Բացել →</i></a></li>
+        </ul>
+      </div>
     <a class="newbanner" href="#d-ai" data-goto="d2-ai-skills"><span class="newpill">ՎԱՂԸ</span><b>📅 Երկ 23.11 · նկարիր «Claude-ի 5 սքիլ»</b><span>Ամբողջ շաբաթվա ցուցակը՝ Դիանա Հակոբյան → 🧭 Ինչ անել</span></a>
     <a class="newbanner" href="#r-motivation"><span class="newpill">ՆՈՐ</span><b>🎬 Reel Library · 10 թեմատիկ tab</b><span>Motivation՝ 10 reel, մնացած 9 tab-ը պատրաստ են նոր reel-երի համար → բացել</span></a>
     <a class="newbanner" href="#d-plan"><span class="newpill">ՆՈՐ</span><b>🧭 Ինչ անել Դիանա Հակոբյանի էջում</b><span>Որտեղ են կորչում դիտողները, շաբաթվա պլան, պրոֆիլի ստուգաթերթ → բացել</span></a>
@@ -752,7 +771,8 @@ function renderDiana(){
     box.innerHTML=html;
   });
 }
-const UPDATES=[{d:"2026-11-22",items:["«📌 Այս շաբաթ նկարիր» ցուցակի կետերը հիմա սեղմելի են. «Բացել →»-ը տանում է հենց այդ reel-ի քարտին և բացում այն։ Վերևի «ՎԱՂԸ» քարտը նույնպես","«Հետևի՛ր էջիս…» վերջաբանը ավելացավ նաև Reel Library-ի 10 մոտիվացիոն reel-ին"]},
+const UPDATES=[{d:"2026-11-22",items:["📌 Pixel Academy-ի համար էլ «Թարմացումներ» էջի վերևում կա սեղմելի ցուցակ. այս շաբաթվա reel-երը (Երք 24.11 U3, Ուրբ 27.11 U6), դեկտեմբերի առաջին պոստերը և պահուստը։ «Բացել →»-ը բացում է հենց այդ reel-ը"]},
+{d:"2026-11-22",items:["«📌 Այս շաբաթ նկարիր» ցուցակի կետերը հիմա սեղմելի են. «Բացել →»-ը տանում է հենց այդ reel-ի քարտին և բացում այն։ Վերևի «ՎԱՂԸ» քարտը նույնպես","«Հետևի՛ր էջիս…» վերջաբանը ավելացավ նաև Reel Library-ի 10 մոտիվացիոն reel-ին"]},
 {d:"2026-11-22",items:["📅 Վաղվա reel (23.11)՝ «Claude-ի 5 օգտակար սքիլ + մեկ հնարք», քո տեքստով, AI և շուկա բաժնի առաջին քարտը","📌 «🧭 Ինչ անել» բաժնում ավելացավ «Այս շաբաթ նկարիր (23–29.11)» ցուցակը՝ ամենաուժեղ reel-երով"]},
 {d:"2026-11-21",items:["🆕 Նոր վերին ներդիր «🎬 Reel Library»՝ 10 թեմատիկ tab-ով. Motivation, Personal, Career, UX/UI Tricks, AI Tools, Design History, Business & Clients, Courses & Academy, Real Projects, Relationships։ Motivation-ում՝ քո 10 reel-ը (MOT-01…MOT-10) առանց փոփոխության, խմբավորված ըստ երկրորդական թեմայի։ Մնացած 9 tab-ը դեռ դատարկ են"]},
 {d:"2026-11-20",items:["🆕 Նոր reel Դիանա Հակոբյան → AI և շուկա. «Վիդեոմոնտաժ Claude Code-ով. Edits»՝ քո տեքստով, վերջում՝ «Հետևի՛ր էջիս…» վերջաբանը"]},
@@ -966,8 +986,8 @@ function prog(){var n=0;inp.forEach(function(i){if(i.checked)n++});var el=docume
 inp.forEach(function(i){i.checked=!!st[i.dataset.ck];i.addEventListener("change",function(){st[i.dataset.ck]=i.checked;try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}prog()})});prog()})();
 
 document.addEventListener("click",function(e){var a=e.target.closest("[data-goto]");if(!a)return;e.preventDefault();var v=a.getAttribute("href").slice(1),c=a.dataset.goto;
-function go(){var el=document.getElementById("card-"+c);if(!el)return;var dt=el.querySelector("details");if(dt)dt.open=true;el.scrollIntoView({behavior:"smooth",block:"start"});el.style.outline="2px solid var(--accent)";setTimeout(function(){el.style.outline=""},2500)}
-if(location.hash.slice(1)!==v){location.hash=v;setTimeout(go,120)}else{go()}});
+var tries=0;function go(){var el=document.getElementById("card-"+c)||document.getElementById(c);if(!el||!el.offsetHeight){if(tries++<20)setTimeout(go,150);return}var dt=el.querySelector("details");if(dt)dt.open=true;el.scrollIntoView({block:"start"});el.style.outline="2px solid var(--accent)";setTimeout(function(){el.style.outline=""},2500)}
+if(location.hash.slice(1)!==v){location.hash=v;setTimeout(go,300)}else{go()}});
 /* ---------- boot ---------- */
 document.getElementById("today").textContent=new Date().toLocaleDateString("hy-AM",{day:"numeric",month:"long",year:"numeric"});
 lsLoad(); renderLog(); renderGuides(); renderAll(); route();
